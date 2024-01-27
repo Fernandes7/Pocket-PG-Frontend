@@ -1,21 +1,36 @@
 "use client"
-import React, { FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import "./style.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
+import { inflate } from 'zlib';
 const Register = () => {
+  interface Userdata{
+    username:string,
+    useremail:string,
+    userpassword:string,
+    userconformpassword:string
+  }
   const[loginorsignup,setloginorsignup]=useState("signup")
+  const [userdata,setuserdata]=useState<Userdata>({username:"",useremail:"",userpassword:"",userconformpassword:""})
   const loginselect=()=>{
     setloginorsignup("login")
+    setuserdata({username:"",useremail:"",userpassword:"",userconformpassword:""})
   }
   const signupselect=()=>{
     setloginorsignup("signup")
+    setuserdata({username:"",useremail:"",userpassword:"",userconformpassword:""})
   }
   const userSignup=(e:FormEvent)=>{
   e.preventDefault()
+  console.log(userdata)
   }
   const userLogin=(e:FormEvent)=>{
     e.preventDefault()
+    console.log(userdata)
+  }
+  const handleinputdata=(e:ChangeEvent<HTMLInputElement>)=>{
+    setuserdata({...userdata,[e.target.name]:e.target.value})
   }
   return (
     <div className='.body'>
@@ -27,10 +42,10 @@ const Register = () => {
           <a href="#" className="icon" style={{width:150}}><FontAwesomeIcon icon={faGooglePlusG} style={{color: "#00008B",}} /></a>
           </div>
           <span>or use your email for registration</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <input type="text" placeholder="Conform password" />
+          <input type="text" placeholder="Name" name="username" value={userdata.username} onChange={handleinputdata}/>
+          <input type="email" placeholder="Email" name="useremail" value={userdata.useremail} onChange={handleinputdata} />
+          <input type="password" placeholder="Password" name="userpassword"value={userdata.userpassword} onChange={handleinputdata}/>
+          <input type="text" placeholder="Conform password" name="conformuserpassword" value={userdata.userconformpassword} onChange={handleinputdata} />
           <button onClick={userSignup}>Sign Up</button>
         </form>
       </div>
@@ -41,8 +56,8 @@ const Register = () => {
             <a href="#" className="icon" style={{width:150}}><FontAwesomeIcon icon={faGooglePlusG} style={{color: "#00008B",}} /></a>
           </div>
           <span>or use your email password</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input type="email" placeholder="Email" name='useremail' value={userdata.useremail} onChange={handleinputdata} />
+          <input type="password" placeholder="Password" name='userpassword' value={userdata.userpassword} onChange={handleinputdata} />
           <div className='rememberdiv'>
             <p>Remember me</p>
             <input type="checkbox" />
