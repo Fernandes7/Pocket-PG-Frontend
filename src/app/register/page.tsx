@@ -1,9 +1,10 @@
 "use client"
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-import "./style.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
-import { inflate } from 'zlib';
+import "./style.css"
+import axios, { AxiosResponse } from 'axios';
+import { useRouter } from 'next/navigation';
 const Register = () => {
   interface Userdata{
     username:string,
@@ -11,29 +12,46 @@ const Register = () => {
     userpassword:string,
     userconformpassword:string
   }
+  const router=useRouter()
   const[loginorsignup,setloginorsignup]=useState("signup")
   const [userdata,setuserdata]=useState<Userdata>({username:"",useremail:"",userpassword:"",userconformpassword:""})
+
   const loginselect=()=>{
     setloginorsignup("login")
     setuserdata({username:"",useremail:"",userpassword:"",userconformpassword:""})
   }
+
   const signupselect=()=>{
     setloginorsignup("signup")
     setuserdata({username:"",useremail:"",userpassword:"",userconformpassword:""})
   }
+
   const userSignup=(e:FormEvent)=>{
   e.preventDefault()
-  console.log(userdata)
+  axios.post("http://localhost:8000/signup",{data:userdata}).then((responce:AxiosResponse)=>{
+    if(responce.data.status===true)
+    loginselect()
+    alert(responce.data.data)
+  })
   }
+
   const userLogin=(e:FormEvent)=>{
     e.preventDefault()
-    console.log(userdata)
+    axios.post("http://localhost:8000/login",{data:userdata}).then((responce:AxiosResponse)=>{
+    if(responce.data.success===true)
+    {
+    router.push("/home")
+    localStorage.setItem("userid",responce.data.data)
+    }
+  })
   }
+
   const handleinputdata=(e:ChangeEvent<HTMLInputElement>)=>{
     setuserdata({...userdata,[e.target.name]:e.target.value})
   }
+
   return (
-    <div className='.body'>
+    <div className='body'>
     <div className={loginorsignup==="signup"? "container active":"container"}>
       <div className="form-container sign-up">
         <form>

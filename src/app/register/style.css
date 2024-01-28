@@ -5,7 +5,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-body {
+.body {
     background-color: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,164,1) 0%, rgba(160,231,246,1) 100%); 
     display: flex;
