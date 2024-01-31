@@ -43,6 +43,8 @@ const Register = () => {
     router.push("/home")
     localStorage.setItem("userid",responce.data.data)
     }
+    else
+    alert(responce.data.data)
   })
   }
 
