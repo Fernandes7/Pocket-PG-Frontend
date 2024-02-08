@@ -9,7 +9,7 @@ export default function Startpage(){
   return(
     <>
     <RegisterRouteButton />
-    <h1 className={styles.head}>Start Page</h1>
+    <h1 className={styles.head}>Start Page edited by aastin</h1>
     </>
   )
 }
