@@ -1,7 +1,5 @@
 "use client"
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 import "./style.css"
 import axios, { AxiosResponse } from 'axios';
 import { useRouter } from 'next/navigation';
@@ -59,7 +57,7 @@ const Register = () => {
         <form>
           <h1>Create Account</h1>
           <div className="social-icons">
-          <a href="#" className="icon" style={{width:150}}><FontAwesomeIcon icon={faGooglePlusG} style={{color: "#00008B",}} /></a>
+          <a href="#" className="icon" style={{width:150}}><p style={{color:"Blue"}}>Google+</p></a>
           </div>
           <span>or use your email for registration</span>
           <input type="text" placeholder="Name" name="username" value={userdata.username} onChange={handleinputdata}/>
@@ -73,7 +71,7 @@ const Register = () => {
         <form>
           <h1>Login</h1>
           <div className="social-icons">
-            <a href="#" className="icon" style={{width:150}}><FontAwesomeIcon icon={faGooglePlusG} style={{color: "#00008B",}} /></a>
+            <a href="#" className="icon" style={{width:150}}><p style={{color:"Blue"}}>Google+</p></a>
           </div>
           <span>or use your email password</span>
           <input type="email" placeholder="Email" name='useremail' value={userdata.useremail} onChange={handleinputdata} />
@@ -89,7 +87,7 @@ const Register = () => {
       <div className="toggle-container">
         <div className="toggle">
           <div className="toggle-panel toggle-left">
-            <h1>Hello Freind!</h1>
+            <h1>Hello Friend!</h1>
             <p>If you have already account please click the login button below</p>
             <button className="hidden" onClick={loginselect}>Login In</button>
           </div>
