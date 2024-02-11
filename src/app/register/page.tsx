@@ -35,7 +35,7 @@ const Register = () => {
 
   const userLogin=(e:FormEvent)=>{
     e.preventDefault()
-    axios.post("http://localhost:8000/login",{data:userdata}).then((responce:AxiosResponse)=>{
+    axios.post("http://localhost:8000/login",{data:userdata},{withCredentials:true}).then((responce:AxiosResponse)=>{
     if(responce.data.success===true)
     {
     router.push("/home")
@@ -57,7 +57,7 @@ const Register = () => {
         <form>
           <h1>Create Account</h1>
           <div className="social-icons">
-          <a href="#" className="icon" style={{width:150}}><p style={{color:"Blue"}}>Google+</p></a>
+          <a href="#" className="icon" style={{width:150}}><p style={{color:"darkblue"}}>Google+</p></a>
           </div>
           <span>or use your email for registration</span>
           <input type="text" placeholder="Name" name="username" value={userdata.username} onChange={handleinputdata}/>
@@ -71,7 +71,7 @@ const Register = () => {
         <form>
           <h1>Login</h1>
           <div className="social-icons">
-            <a href="#" className="icon" style={{width:150}}><p style={{color:"Blue"}}>Google+</p></a>
+            <a href="#" className="icon" style={{width:150}}><p style={{color:"darkblue"}}>Google+</p></a>
           </div>
           <span>or use your email password</span>
           <input type="email" placeholder="Email" name='useremail' value={userdata.useremail} onChange={handleinputdata} />
