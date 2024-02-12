@@ -8,6 +8,7 @@ export default function Startpage(){
     <>
     <RegisterRouteButton />
     <h1 className={styles.head}>Start Page edited by aastin</h1>
+    <h1>Edited By Minna</h1>
     </>
   )
 }
