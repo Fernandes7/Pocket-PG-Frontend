@@ -1,9 +1,9 @@
 import { useRouter } from "next/navigation"
-
+import styles from "../page.module.css"
 const RegisterRouteButton=()=>{
     const router=useRouter()
     return (
-        <button onClick={()=>router.push("/register")}>Rgister/Login Now</button>
+        <button className={styles.regbtn} onClick={()=>router.push("/register")}>Register/Login Now</button>
     )
 }
 

@@ -1,3 +1,23 @@
-.head{
-  text-align: center;
+.customHr {
+  border: none;
+  height: 1px;
+  background-color: #8A9E;
+}
+.container{
+  background-color: #141C24;
+  width: 100%;
+}
+.heading{
+  color: aliceblue;
+
+}
+.regbtn{
+  background-color: #F5C754;
+  color: black;
+  width: auto;
+  height: 40px;
+  font-size: medium;
+  border-radius: 10px;
+  font-weight:bold;
+  
 }
