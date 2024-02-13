@@ -1,4 +1,3 @@
-"use client";
 
 import axios, { AxiosResponse } from "axios";
 import { useRouter } from "next/navigation";
