@@ -1,6 +1,4 @@
-
 import Logoutbutton from "./componets/logoutbuttn"
-
 
 export default function Hompage() {
   return (
