@@ -8,7 +8,7 @@ import kochi from "./images/kochi.jpg"
 import thrissur from "./images/thrissur.jpg"
 import kozhikode from "./images/kozhikode.jpg"
 import trivandrum from "./images/trivandrum.webp"
-import waynad from "./images/waynad.jpg"
+import waynad from "./images/wayanad.jpeg"
 import Image from 'next/image'
 export default function Startpage(){
   Verifyuserloggined()
@@ -17,8 +17,8 @@ export default function Startpage(){
       <div className={styles.header}>
         <h2 className={styles.pocket}>POCKET PG</h2>
         <div className={styles.subheader}>
-          <h2 className={styles.about}>About Us</h2>
-          <h2 className={styles.contact}>Contact</h2>
+          <h2 className={styles.navabout}>About Us</h2>
+          <h2 className={styles.navcontact}>Contact</h2>
         </div>
       </div>
       <hr className={styles.customHr}/>
@@ -46,13 +46,14 @@ export default function Startpage(){
       <div className={styles.citiescontainer2}>
       <div className={styles.card}>
         <Image src={trivandrum} alt="trivandrum" className={styles.ftimage1}  />
-        <p className={styles.locality}>Thiruvananthapura</p>
+        <p className={styles.locality}>Thiruvananthapuram</p>
         </div>
         <div className={styles.card}>
         <Image src={waynad} alt="waynad" className={styles.ftimage2}  />
         <p className={styles.locality}>Wayanad</p>
         </div>
       </div>
+      <h2 className={styles.aboutus}>About Us</h2>
     </div>
   )
 }
