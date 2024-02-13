@@ -1,7 +1,7 @@
 "use client";
 import React, { ChangeEvent, FormEvent, use, useState } from "react";
 import axios, { AxiosResponse } from "axios";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
