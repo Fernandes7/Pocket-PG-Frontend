@@ -4,20 +4,119 @@
   background-color: #8A9E;
 }
 .container{
-  background-color: #141C24;
+  background-color: #f5f6fa;
   width: 100%;
+  height: 1500px;
 }
-.heading{
-  color: aliceblue;
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.subheader{
+  display: flex;
+  justify-content: space-between;
+}
+.pocket{
+  color: black;
+  padding-left: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 500;
 
 }
-.regbtn{
-  background-color: #F5C754;
+.about,.contact{
   color: black;
-  width: auto;
+  padding-right: 35px;
+  padding-top: 20px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.regbtn{
+  margin-left: 55px;
+  margin-top: 435px;
+  background-color: #F5C754;
+  border: none;
+  color: black;
+  width: 200px;
   height: 40px;
   font-size: medium;
   border-radius: 10px;
   font-weight:bold;
-  
+  position: absolute;
+  z-index: 1;
+}
+.regbtn:hover{
+  background-color: #f7bd2b;
+}
+.main{
+  position: relative;
+  margin: 200px;
+  margin-bottom: 0;
+  margin-top: 60px;
+  border-radius: 20px;
+  height: 575px;
+
+}
+.bgimage{
+  object-fit: cover;
+  border-radius: 20px;
+}
+.mainhead{
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  padding-top: 305px;
+  z-index: 1;
+  padding-left: 50px;
+  font-weight: 800;
+}
+.mainsubhead{
+  color: white;
+  margin-top: 380px;
+  margin-left: 55px; 
+  font-size: large;
+  font-weight: 300;
+  position: absolute;
+  z-index: 1;
+}
+.totalcities{
+  text-align: center;
+  margin-top: 75px;
+  font-size: 25px;
+}
+.citiescontainer1{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 75px;
+  padding-left: 140px;
+  padding-right: 140px;
+}
+.citiescontainer2{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-left: 166px;
+  padding-right: 166px;
+}
+.ftimage1{
+  object-fit: cover;
+  width: 376px;
+  height: 180px;
+  border-radius: 15px 15px 0px 0px;
+}
+.ftimage2{
+  object-fit: cover;
+  width: 785px;
+  height: 180px;
+  border-radius: 15px 15px 0px 0px;
+}
+.locality{
+  font-weight: 600;
+  padding: 10px;
+  padding-left: 5px;
+  background-color: white;
+}
+.card{
+  display: flex;
+  flex-direction: column;
 }
