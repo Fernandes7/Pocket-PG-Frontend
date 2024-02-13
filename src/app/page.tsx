@@ -2,7 +2,6 @@
 import { RegisterRouteButton } from "./componets/registerroutebutton"
 import Verifyuserloggined from "./componets/verifyuserloggined"
 import styles from "./page.module.css"
-import { useRouter } from "next/navigation"
 import hostel from "./images/mainpagehostel.jpg"
 import kochi from "./images/kochi.jpg"
 import thrissur from "./images/thrissur.jpg"
@@ -10,6 +9,7 @@ import kozhikode from "./images/kozhikode.jpg"
 import trivandrum from "./images/trivandrum.webp"
 import waynad from "./images/waynad.jpg"
 import Image from 'next/image'
+
 export default function Startpage(){
   Verifyuserloggined()
   return(
