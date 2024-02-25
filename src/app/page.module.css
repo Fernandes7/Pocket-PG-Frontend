@@ -1,16 +1,16 @@
-.customHr {
-  border: none;
-  height: 1px;
-  background-color: #8A9E;
-}
 .container{
   background-color: #f5f6fa;
   width: 100%;
-  height: 1500px;
+  height: auto;
 }
 .header{
   display: flex;
   justify-content: space-between;
+  top: 0px;
+  position: fixed;
+  border-bottom: #8CD4F9 2px;
+  background-color: white;
+  width: 100%;
 }
 .subheader{
   display: flex;
@@ -24,60 +24,57 @@
   font-weight: 500;
 
 }
-.about,.contact{
+.navabout,.navcontact{
   color: black;
-  padding-right: 35px;
-  padding-top: 20px;
+  text-decoration: none;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-size: 15px;
   font-weight: 500;
+  transition: .3s;
+  border-radius: 5px;
+}
+.navabout:hover,.navcontact:hover{
+  background-color: #8CD4F9;
+  cursor: pointer;
 }
 .regbtn{
-  margin-left: 55px;
-  margin-top: 435px;
-  background-color: #F5C754;
+  margin-left: 150px;
+  background-color: #0753ab;
+  margin-top: 15px;
   border: none;
-  color: black;
+  color: white;
   width: 200px;
   height: 40px;
   font-size: medium;
   border-radius: 10px;
-  font-weight:bold;
-  position: absolute;
-  z-index: 1;
+  font-weight:normal;
 }
 .regbtn:hover{
-  background-color: #f7bd2b;
+  background-color: #043266;
 }
 .main{
-  position: relative;
-  margin: 200px;
-  margin-bottom: 0;
-  margin-top: 60px;
-  border-radius: 20px;
-  height: 575px;
-
-}
-.bgimage{
-  object-fit: cover;
-  border-radius: 20px;
+  height: 654px;
+  width: 100%;
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/451/178/500/apartment-bed-chair-comfort-wallpaper-preview.jpg);
+  background-size: 100%;
 }
 .mainhead{
   color: white;
   font-size: 50px;
-  position: absolute;
   padding-top: 305px;
-  z-index: 1;
-  padding-left: 50px;
+  margin-top: 50px;
+  padding-left: 150px;
   font-weight: 800;
 }
 .mainsubhead{
   color: white;
-  margin-top: 380px;
-  margin-left: 55px; 
+  padding-left: 150px;
+  margin-top: 15px;
   font-size: large;
-  font-weight: 300;
-  position: absolute;
-  z-index: 1;
+  font-weight: 400;
 }
 .totalcities{
   text-align: center;
@@ -119,4 +116,64 @@
 .card{
   display: flex;
   flex-direction: column;
+  transition: .5s;
+}
+.card:hover{
+  transform: scale(1.3);
+  z-index: 3;
+}
+.aboutus{
+  font-size: 40px;
+  text-align: center;
+  margin-top: 100px;
+  padding-top: 50px;
+  margin-bottom: 10px;
+}
+.aboutcontainer{
+  height: 417px;
+  padding-left: 167px;
+  padding-right: 167px;
+  background-image: url(https://img.freepik.com/premium-vector/morning-city-skyline-silhouette-flat-style-modern-urban-landscape_608442-209.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699747200&semt=ais);
+  background-size: cover;
+  padding-bottom: 100px;
+}
+.aboutusdata{
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.footer{
+  height: 185px;
+  background-color: #0753ab;
+  color: white;
+  font-weight: 300;
+  font-size: small;
+}
+.foot1{
+  padding-top: 35px;
+  display: flex;
+  padding-bottom: 20px;
+}
+.footerleft{
+  padding-left: 65px;
+  padding-right: 85px;
+  width: 50%;
+
+}
+.footerright{
+  width: 50%;
+  padding-left: 275px;
+}
+.footerbottom{
+  padding-top: 15px;
+  margin-top: 4px;
+  text-align: center;
+  background-color: #043266;
+  padding-bottom: 15px;
+}
+.places{
+  display: flex;
+  flex-direction: row;
+}
+.locations{
+  padding-right: 20px;
 }
