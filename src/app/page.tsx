@@ -21,11 +21,12 @@ export default function Startpage(){
         <div className={styles.imagediv}>
         <h1 className={styles.mainhead}>Welcome to POCKET PG</h1>
         <h5 className={styles.mainsubhead}>Manage your hostel effortlessly</h5>
-        <button className={styles.explorebutton} onClick={()=>movetohomepage("/home")}>Explore Now</button>
+        <button className={styles.explorebutton} onClick={()=>movetohomepage("/home?location=erna")}>Explore Now</button>
         <div className={styles.linksdiv}>
           <ul>
             <li  onClick={()=>movetohomepage("/")}>Home</li>
             <li  onClick={()=>movetohomepage("/about")}>About</li>
+            <li  onClick={()=>movetohomepage("/pgservices")}>Services</li>
             <li  onClick={()=>movetohomepage("/contact")}>Contact</li>
             <li  onClick={()=>movetohomepage("/termsandcondition")}>Term's & Condition</li>
           </ul>
