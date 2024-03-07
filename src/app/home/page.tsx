@@ -1,10 +1,7 @@
-import Logoutbutton from "./componets/logoutbuttn"
+import RootLayout from "../layout";
 
 export default function Hompage() {
   return (
-    <>
-       <Logoutbutton />
-      <h1>Home After Login Checking Commit</h1>
-    </>
+   <h2>Home Page</h2>
   );
 }
