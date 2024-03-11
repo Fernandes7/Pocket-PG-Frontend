@@ -1,0 +1,189 @@
+/* homepageimage styles */
+
+.homepageimagediv {
+  background: linear-gradient(
+      rgba(35, 34, 34, 0.87),
+      rgba(18, 17, 17, 0.152)
+    ),
+    url("https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  width: 100%;
+  height: 700px;
+  background-position: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.homepageimagediv :nth-child(1) {
+  max-width: 500px;
+}
+
+.homepageimagediv h1 {
+  font-size: 45px;
+  color: white;
+  font-family: "DM sans";
+}
+.glassdiv {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(6, 24, 32, 0.358);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: 400px;
+  padding: 20px;
+  margin-top: 120px;
+}
+
+.glassdivp {
+  text-align: center;
+  color: white;
+  font-family: "Railway";
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.glassdiv div {
+  display: flex;
+  gap: 20px;
+}
+
+.glassdiv img {
+  width: 250px;
+  height: 200px;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 15px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 15px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 15px -8px rgba(0, 0, 0, 0.75);
+}
+
+.glassdiv p{
+  text-align: center;
+  margin-top: 20px;
+  width: 75%;
+  color:rgb(255, 255, 255);
+  font-family: "Questrial";
+}
+
+/* homepageintialdata styles */
+
+.homepageinitialdatawrap{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.homepageinitialdatawrap h4{
+  font-family: "Questrial";
+  margin:80px 0px 30px 0px;
+  font-size: 25px;
+}
+
+.locationcard {
+  border: solid 1px rgb(151, 143, 143);
+  width:400px;
+  height:300px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-box-shadow: 7px 13px 17px -14px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 13px 17px -14px rgba(0,0,0,0.75);
+box-shadow: 7px 13px 17px -14px rgba(0,0,0,0.75);
+}
+
+.locationcard img{
+  width: 380px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.locationtext{
+  display:flex;
+  gap:100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.locationtext img{
+  width:30px;
+  height: 30px;
+}
+
+.locationtext :nth-child(1){
+  margin-top: 10px;
+  display: flex;
+}
+
+.locationtext p{
+  font-size: 10px;
+}
+
+/* Search Option div Styles */
+
+.searchfilterdiv{
+  display:flex;
+  gap:10px;
+  position: absolute;
+  top:100px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.searchfilterdiv div{
+  width: 300px;
+  height: 40px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(134,149,254,1) 0%, rgba(180,211,236,1) 100%); 
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  font-family: "Questrial";
+}
+
+.mapdiv{
+  width: 100%;
+  height: 84vh;
+}
+
+/* Searchbylocation Styles */
+
+.searchbylocationdiv{
+  position:absolute;
+  width: 100%;
+  height: 100vh;
+  top:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.715);
+}
+
+/* Homepage styles after Initial run */
+
+.homediv{
+  display:flex;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.homeleftdiv{
+  width: 50%;
+}
+
+.rightmapdiv{
+  width:50%;
+}
+
+

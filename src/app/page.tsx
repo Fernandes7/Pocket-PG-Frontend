@@ -21,7 +21,7 @@ export default function Startpage(){
         <div className={styles.imagediv}>
         <h1 className={styles.mainhead}>Welcome to POCKET PG</h1>
         <h5 className={styles.mainsubhead}>Manage your hostel effortlessly</h5>
-        <button className={styles.explorebutton} onClick={()=>movetohomepage("/home?location=erna")}>Explore Now</button>
+        <button className={styles.explorebutton} onClick={()=>movetohomepage("/home?initial=true")}>Explore Now</button>
         <div className={styles.linksdiv}>
           <ul>
             <li  onClick={()=>movetohomepage("/")}>Home</li>

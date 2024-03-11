@@ -46,7 +46,10 @@
 .main{
   height: 654px;
   width: 100%;
-  background-image: url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background:linear-gradient(
+    rgba(35, 34, 34, 0.87),
+    rgba(18, 17, 17, 0)
+  ), url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-position: 10px;
 }
 .mainhead{
@@ -175,6 +178,7 @@
   position: sticky;
   top:0px;
   z-index: 2;
+  background-color: white;
 }
 
 .headdiv p {
@@ -183,7 +187,7 @@
 
 .linkdiv{
   display: flex;
-  gap:10px;
+  gap:30px;
   margin-right: 10px;
 }
 
@@ -195,8 +199,8 @@
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,164,1) 0%, rgba(110,155,235,1) 100%); 
   cursor: pointer;
   border: none;
-  /* margin-right: 30px; */
   color: white;
+  font-family: "Raleway";
 }
 
 .linksdiv{
