@@ -33,7 +33,7 @@ export default function Addlocationcomponets()
             alert("Image and data uploded successfully")
             }
             else
-            alert("Failed to upload data")
+            alert("Failed to upload image and data")
         })
     }
     
