@@ -1,0 +1,55 @@
+.head{
+    margin-top: 125px;
+    text-align: center;
+    font-size: 60px;
+}
+.aboutbody{
+    background-image: linear-gradient(rgba(255,255,255,1), rgba(182,216,255,1),rgba(255,255,255,1));
+    height: 1200px;
+}
+.aboutcontent{
+    text-align: center;
+    padding-left: 225px;
+    padding-right: 225px;
+    font-weight: 400;
+    margin-top: 50px;
+    color: #125d95;
+}
+.founders{
+    margin-top: 125px;
+    text-align: center;
+    font-size: 60px;
+}
+.founderdiv{
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 200px;
+    gap: 50px 100px;
+    margin-left: 250px;
+    margin-right: 200px;
+}
+.card{
+    display: flex;
+}
+.founderdetails{
+    margin-top: 60px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.founderpic{
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.name{
+    font-size: x-large;
+    font-weight: bold;
+}
+.designation{
+    color: #0753ab;
+    font-weight: normal;
+    font-size: medium;
+}
