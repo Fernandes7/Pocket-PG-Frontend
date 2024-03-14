@@ -1,0 +1,36 @@
+.fig{
+    width: 100%;
+    height: 300px;
+    opacity: 50;
+    background-image: url("https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+.heading{
+    color: aliceblue;
+    position: absolute; 
+    margin-top: 125px;
+    margin-left: 575px; 
+}
+
+.heading2,.heading3{
+  color: #A9A9A9;
+  text-decoration: underline;
+  margin-left: 150px; 
+}
+
+
+.heading2{
+  margin-top: 50px;
+}
+.heading3{
+  margin-top: 15px;
+}
+ .p1{
+  color: black;
+  margin-top:25px;
+  margin-left:150px;
+  margin-right:150px;
+  text-align: justify;
+  font-size: 22;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.5;
+}
