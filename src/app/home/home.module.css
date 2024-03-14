@@ -1,10 +1,7 @@
 /* homepageimage styles */
 
 .homepageimagediv {
-  background: linear-gradient(
-      rgba(35, 34, 34, 0.87),
-      rgba(18, 17, 17, 0.152)
-    ),
+  background: linear-gradient(rgba(35, 34, 34, 0.87), rgba(18, 17, 17, 0.152)),
     url("https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   width: 100%;
   height: 700px;
@@ -62,89 +59,97 @@
   box-shadow: 10px 10px 15px -8px rgba(0, 0, 0, 0.75);
 }
 
-.glassdiv p{
+.glassdiv p {
   text-align: center;
   margin-top: 20px;
   width: 75%;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   font-family: "Questrial";
 }
 
 /* homepageintialdata styles */
 
-.homepageinitialdatawrap{
-  display:flex;
+.homepageinitialdatawrap {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-.homepageinitialdatawrap h4{
+.homepageinitialdatawrap h4 {
   font-family: "Questrial";
-  margin:80px 0px 30px 0px;
+  margin: 80px 0px 30px 0px;
   font-size: 25px;
 }
 
 .locationcard {
   border: solid 1px rgb(151, 143, 143);
-  width:400px;
-  height:300px;
+  width: 400px;
+  height: 300px;
   padding: 10px 20px 10px 20px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  -webkit-box-shadow: 7px 13px 17px -14px rgba(0,0,0,0.75);
--moz-box-shadow: 7px 13px 17px -14px rgba(0,0,0,0.75);
-box-shadow: 7px 13px 17px -14px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 7px 13px 17px -14px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 13px 17px -14px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 13px 17px -14px rgba(0, 0, 0, 0.75);
 }
 
-.locationcard img{
+.locationcard img {
   width: 380px;
   height: 200px;
   border-radius: 10px;
 }
 
-.locationtext{
-  display:flex;
-  gap:100%;
-  justify-content: center;
+.locationwrap{
+  display: flex;
+  gap:20px;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.locationtext img{
-  width:30px;
+.locationtext {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 380px;
+}
+
+.locationtext img {
+  width: 30px;
   height: 30px;
 }
 
-.locationtext :nth-child(1){
+.locationtext :nth-child(1) {
   margin-top: 10px;
   display: flex;
 }
 
-.locationtext p{
+.locationtext p {
   font-size: 10px;
 }
 
 /* Search Option div Styles */
 
-.searchfilterdiv{
-  display:flex;
-  gap:10px;
+.searchfilterdiv {
+  display: flex;
+  gap: 10px;
   position: absolute;
-  top:100px;
+  top: 100px;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
-.searchfilterdiv div{
+.searchfilterdiv div {
   width: 300px;
   height: 40px;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(134,149,254,1) 0%, rgba(180,211,236,1) 100%); 
-  display:flex;
+  background: rgb(195, 232, 240);
+  display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -152,38 +157,191 @@ box-shadow: 7px 13px 17px -14px rgba(0,0,0,0.75);
   font-family: "Questrial";
 }
 
-.mapdiv{
+.mapdiv {
   width: 100%;
   height: 84vh;
 }
 
 /* Searchbylocation Styles */
 
-.searchbylocationdiv{
-  position:absolute;
+.searchbylocationdiv {
+  position: absolute;
   width: 100%;
   height: 100vh;
-  top:0;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.715);
+  background: rgba(0, 0, 0, 0.623);
+}
+
+.searchdivwrap {
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchdivwrap input{
+width: 350px;
+height: 40px;
+border-radius: 5px;
+background: white;
+margin-top: 50px;
+font-family: "Questrial";
+padding: 10px;
+margin-bottom: 30px;
+}
+
+.blocker{
+  position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.locationdatadiv div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 350px;
+  height: 35px;
+  padding: 10px;
+  background: rgba(3, 1, 60, 0.724);
+  gap:10px;
+  font-size: 14px;
+  color: rgb(51, 54, 54);
+  margin-bottom: 5px;
+  border-radius: 5px;
+  color:white
+}
+
+.locationdatadiv img{
+  width: 15px;
+  height: 15px;
 }
 
 /* Homepage styles after Initial run */
 
-.homediv{
-  display:flex;
+.homediv {
+  display: flex;
   width: 100%;
   margin-top: 80px;
 }
 
-.homeleftdiv{
+.homeleftdiv {
   width: 50%;
 }
 
-.rightmapdiv{
-  width:50%;
+.rightmapdiv {
+  width: 50%;
 }
 
+/* Display hostels page styles */
 
+.displayhosteldivwrap{
+  width: 100%;
+  max-height: 800px;
+  padding: 10px 40px 40px 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.displayhosteldivwrap h4{
+font-size: 15px;
+font-family: "Questrial";
+}
+
+.hostelcardwarp{
+  display:flex;
+  flex-wrap: wrap;
+  gap:10px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.hostelcard{
+  width:420px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+    background: rgb(255, 255, 255);
+background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(248, 247, 247) 0%, rgb(230, 244, 255) 100%); 
+}
+
+.hostelimage{
+  width: 400px;
+  height: 300px;
+  border-radius: 5px;
+  -webkit-box-shadow: 7px 13px 12px -3px rgba(0,0,0,0.21);
+-moz-box-shadow: 7px 13px 12px -3px rgba(0,0,0,0.21);
+box-shadow: 7px 13px 12px -3px rgba(0,0,0,0.21);
+}
+
+.hostelcardcontent{
+  width: 380px;
+  margin-top: 20px;
+}
+
+.hostelcardcontent h3{
+  font-family: "Lato";
+  font-weight: 600;
+}
+
+.hostelcardcontent div{
+  display: flex;
+  gap:10px;
+  margin-top: 10px;
+}
+
+.hostelcardcontent img{
+  width: 15px;
+  height: 15px;
+}
+
+.hostelcardcontent p{
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 12px;
+  color: rgb(59, 58, 58);
+}
+
+.hostelcardname{
+  display:flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.hostelcardname p{
+  background: rgb(174, 251, 247);
+  padding:10px;
+  border-radius: 5px;
+}
+
+.hostelcardamount{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hostelcardamount div{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hostelcardamount img{
+  width:20px;
+  height: 20px;
+}
