@@ -109,7 +109,7 @@ export default function TermsandCondition()
         <h2 className={styles.heading3}>Refunds:</h2>
             <p className={styles.p1}>
             If PocketPG is unable to transfer the rental amount to the designated bank account of the Beneficiary due to technical issues, a refund will be issued to the same 
-            account from which the remittance was initiated. However, once the amount has been successfully credited to the Beneficiary's designated bank account, FindMyHostel will
+            account from which the remittance was initiated. However, once the amount has been successfully credited to the Beneficiary's designated bank account, PocketPG will
             not be liable to repay or refund the amount to the User. In case of chargebacks, if a transaction is disputed, reversed, unauthorized, or allegedly unlawful, suspicious, 
             or in violation of the agreement, the Beneficiary will be responsible for reimbursing PocketPG for any associated chargebacks, fees, fines, or penalties. The User/Beneficiary 
             is expected to cooperate in the investigation of disputed transactions, and failure to do so may result in an irreversible chargeback for which PocketPG shall not be held liable.    
