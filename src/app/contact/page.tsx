@@ -33,6 +33,7 @@ export default function Contact()
                 <div className={styles.web}><p>+91 7510736471</p></div>
             </div>
         </div>
+        <div className={styles.whitediv}></div>
         </>
     )
 }

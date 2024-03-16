@@ -13,6 +13,7 @@ export default function HompageImage() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
+          className={styles.imagesinglassdiv}
         >
           <img
             src="https://imageio.forbes.com/specials-images/imageserve/652f603a91415a3d647fc207/Modern-Style-Bedroom/960x0.jpg?format=jpg&width=960"

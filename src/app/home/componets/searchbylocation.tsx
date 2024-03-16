@@ -21,7 +21,6 @@ export default function SearchByLocation(props:myprops)
     }
     const searchhostelbylocationroutefunction=(locationname:string)=>{
         props.enablesearch()
-        window.location.reload()
         router.push(`/home?initial=false&locationname=${locationname}`)
     }
     return(
