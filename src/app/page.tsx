@@ -19,9 +19,22 @@ export default function Startpage(){
     <div className={styles.container}>
       <div className={styles.main}>
         <div className={styles.imagediv}>
-        <h1 className={styles.mainhead}>Welcome to POCKET PG</h1>
-        <h5 className={styles.mainsubhead}>Manage your hostel effortlessly</h5>
-        <button className={styles.explorebutton} onClick={()=>movetohomepage("/home?initial=true")}>Explore Now</button>
+        <div className={styles.mainsubhead}>
+        <div className={styles.rounddivwrap}>
+            <div className={styles.rounddiv}></div>
+            <div className={styles.rounddiv}></div>
+            <div className={styles.rounddiv}></div>
+            <div className={styles.rounddiv}></div>
+            <div className={styles.rounddiv}></div>
+          </div>
+          <p>Discover the new valleys of Hostel rooms</p>
+          <h1>Welcome to pocket PG</h1>
+          <div className={styles.eb} onClick={()=>movetohomepage("/home?initial=true")}>
+            <img src="https://cdn-icons-png.flaticon.com/128/2822/2822311.png" alt="hey" />
+            <p>Explore now </p>
+            <img src="https://cdn-icons-png.flaticon.com/128/545/545682.png" alt="hey" />
+          </div>
+        </div>
         <div className={styles.linksdiv}>
           <ul>
             <li  onClick={()=>movetohomepage("/")}>Home</li>

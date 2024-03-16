@@ -8,7 +8,7 @@ export default function DisplayHostels()
     const [hostel,setHosteldata]=useState<any>()
     useEffect(()=>{
         fetchhostelsbasedonlocation()
-    },[])
+    },[searchparams])
     const fetchhostelsbasedonlocation=()=>{
         const location=searchparams.get("locationname")
         axios.post("http://localhost:8000/vh",{data:location}).then((responce)=>{
@@ -18,7 +18,7 @@ export default function DisplayHostels()
     }
     return(
         <div className={styles.displayhosteldivwrap}>
-            <h4>Showing Results for Ernakulam</h4>
+            <h4>Showing Results for {searchparams.get("locationname")}</h4>
             <div className={styles.hostelcardwarp}>
                 {hostel && hostel.map(({hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent}:any)=>{
                  return(

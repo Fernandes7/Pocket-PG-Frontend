@@ -1,6 +1,6 @@
 import styles from "./about.module.css"
 import Image from "next/image"
-import aastin from "../images/aastinpic.jpg"
+import aastin from "../images/aastindp.jpg"
 import minna from "../images/minnadp.jpg"
 import ferno from "../images/fernodp.jpg"
 import roshan from "../images/roshandp.jpg"
