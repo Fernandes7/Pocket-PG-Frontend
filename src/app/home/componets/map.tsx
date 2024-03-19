@@ -5,14 +5,20 @@ import styles from "../home.module.css";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
+import MappopupServices from "./mappopupservices";
+import MapRating from "./mapRating";
 export default function MapIntegration() {
   const searchparams=useSearchParams()
   const [enablepopup,setPopup]=useState<number>()
   const [hosteldata,setHosteldata]=useState<any>()
+  const [services,setServices]=useState([])
+  const [remainingservicelength,setRemainingservicelength]=useState(0)
+  const [rating,setRating]=useState()
   useEffect(() => {
     fetchmaplocation()
   },[searchparams]);
   const fetchmaplocation=()=>{
+    setPopup(null)
     const location=searchparams.get("locationname")
     axios.post("http://localhost:8000/vh",{data:location}).then((responce)=>{
         if(responce.data.success)
@@ -22,8 +28,18 @@ export default function MapIntegration() {
         }
     })
   }
-  const handlepopup=(lat:number)=>{
+  const handlepopup=(lat:number,services:string,rating:string)=>{
   setPopup(lat)
+  setServices([])
+  if(rating)
+  setRating(JSON.parse(rating))
+  if(services && services.length>0)
+  {
+    const servicearray=JSON.parse(services)
+    const slicesdata=servicearray.slice(1,5)
+    setServices(slicesdata)
+    setRemainingservicelength(servicearray.length-5)
+  }
   }
   return (
     <div className={styles.mapdiv}>
@@ -38,12 +54,12 @@ export default function MapIntegration() {
           positionOptions={{ enableHighAccuracy: true }}
           trackUserLocation={true}
         />
-        {hosteldata && hosteldata.map(({hostellongitude,hostellatitude,hostelname,hostelimage}:any) => (
+        {hosteldata && hosteldata.map(({hostellongitude,hostellatitude,hostelname,hostelimage,hostelservices,hostelinitialrating}:any) => (
                 <Marker
                     key={hostellatitude}
                     latitude={hostellatitude}
                     longitude={hostellongitude}
-                    onClick={()=>handlepopup(hostellatitude)}
+                    onClick={()=>handlepopup(hostellatitude,hostelservices,hostelinitialrating)}
                 >
                       {enablepopup && (enablepopup===hostellatitude) &&<Popup
                       closeOnMove={false}
@@ -63,7 +79,16 @@ export default function MapIntegration() {
                     <NavigationControl />
       </ReactMapGl>
       <div className={`${styles.datainmap} ${!enablepopup && styles.popoffdiv}`} onClick={()=>console.log("clicked div")}>
-        <p>Hello world</p>
+         {(services && services.length>0)&&<MapRating rating={rating} />}
+         {(services && services.length>0)? services.map((item)=>{
+          return(
+            <MappopupServices key={item} services={item}/>
+          )
+         }):<p style={{textAlign:"center",fontFamily:"Lato"}}>This Hostel has No Services To Display</p>}
+         {(services && services.length>0)&&<div className={styles.extraservicediv}>
+          <p>{remainingservicelength}+</p>
+          <img src="https://cdn-icons-png.flaticon.com/128/2989/2989981.png" alt="arrow" />
+         </div>}
       </div>
     </div>
   );
