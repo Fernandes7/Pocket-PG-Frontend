@@ -196,6 +196,11 @@
   border-radius: 10px;
   background: white;
   transition: all 1s ease;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
 }
 
 .popoffdiv{
@@ -204,6 +209,74 @@
   visibility: hidden;
 }
 
+.extraservicediv{
+  border-radius: 40px;
+  width: 60px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+  background: rgb(235, 247, 247);
+  -webkit-box-shadow: 10px 10px 14px -13px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 14px -13px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 14px -13px rgba(0,0,0,0.75);
+padding: 10px;
+font-family:"Satisfy" ;
+}
+
+.extraservicediv img{
+  width: 10px;
+  height: 10px;
+
+}
+
+/* Map Popup div style */
+ .popupwrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 17%;
+  height: 40px;
+  border-radius: 10px;
+  gap:10px;
+  background: rgb(235, 247, 247);
+  -webkit-box-shadow: 10px 10px 14px -13px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 14px -13px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 14px -13px rgba(0,0,0,0.75);
+ }
+
+ .popupwrap img{
+  width: 30px;
+  height: 30px;
+ }
+
+ .popupwrap p{
+  font-family: "Questrial";
+  font-size: 13px;
+ }
+
+ .star{
+  width: 15px;
+  height: 15px;
+ }
+
+ .ratingdivinmap{
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  gap:5px;
+  font-family: "Lato";
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgb(235, 247, 247);
+  -webkit-box-shadow: 10px 10px 14px -13px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 14px -13px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 14px -13px rgba(0,0,0,0.75);
+font-size: 10px;
+ }
 
 
 /* Searchbylocation Styles */
