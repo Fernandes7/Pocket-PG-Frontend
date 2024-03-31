@@ -1,0 +1,23 @@
+.textdiv {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color:red;
+    transition:all 2s ease;
+    padding: 20px;
+    margin-top: 100px;
+    left:-300px;
+}
+
+.open{
+    left:0px
+}
+
+.close{
+    left: -300px;
+}
+
+.textbutton{
+    width: 100px;
+    height: 50px;
+}

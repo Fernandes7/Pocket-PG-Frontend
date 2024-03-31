@@ -11,7 +11,7 @@ export default function DisplayHostels()
     },[searchparams])
     const fetchhostelsbasedonlocation=()=>{
         const location=searchparams.get("locationname")
-        axios.post("http://localhost:8000/vh",{data:location}).then((responce)=>{
+        axios.post("http://localhost:3002/proxyvh",{data:location}).then((responce)=>{
             if(responce.data.success)
             setHosteldata(responce.data.data)
         })

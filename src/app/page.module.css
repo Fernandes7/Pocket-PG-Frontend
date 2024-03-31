@@ -64,6 +64,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .mainsubhead p{
@@ -113,6 +114,7 @@
   gap:10px;
   border: none;
   cursor: pointer;
+  margin-top: 50px;
 }
 
 
@@ -247,6 +249,18 @@
   top:0px;
   z-index: 2;
   background-color: white;
+}
+
+.logoutdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px
+}
+
+.logoutdiv p {
+  font-family: "Satisfy";
+  font-size: 18px;
 }
 
 .headdiv p {

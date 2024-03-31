@@ -44,7 +44,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <Header />
+       <Header />
         <MantineProvider>{children}</MantineProvider>
         <Footer />
       </body>

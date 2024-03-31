@@ -1,10 +1,9 @@
-
+"use client"
 import axios, { AxiosResponse } from "axios";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Verifyuserloggined() {
-  const router = useRouter();
+  const [isLoggined,setIsloggined]=useState<string>("")
   useEffect(() => {
     Verifyuserloggined();
   }, []);
@@ -16,12 +15,11 @@ export default function Verifyuserloggined() {
         .post("http://localhost:8000/finduserbyid", { data: userid  })
         .then((responce: AxiosResponse) => {
           if (responce.data.success)
-          { 
-          router.push("/home");
-          }
+          setIsloggined(responce.data.data.username)
         });
     }
     else
-    return false
+    setIsloggined("")
   };
+  return isLoggined
 }

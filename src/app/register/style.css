@@ -6,14 +6,11 @@
     font-family: 'Montserrat', sans-serif;
 }
 .body {
-    /* background-color: rgb(2,0,36); */
-    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,164,1) 0%, rgba(160,231,246,1) 100%);  */
-    background-color: #f5f6fa;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: 90vh;
 }
 
 .container {

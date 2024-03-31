@@ -1,8 +1,12 @@
+"use client"
+import { usePathname } from "next/navigation"
 import styles from "../page.module.css"
+import path from "path"
 export default function Footer(){
+  const pathname=usePathname()
     return(
         <div>
-        <div className={styles.footer} id="contactlink">
+          {pathname!=="/register"?<div className={styles.footer} id="contactlink">
         <div className={styles.foot1}>
           <div className={styles.footerleft}>
             <p style={{fontWeight: 600}}>Pocket PG</p>
@@ -22,7 +26,7 @@ export default function Footer(){
           </div>
         </div>
         <p className={styles.footerbottom}>All rights reserved © 2024 - Pocket PG</p>
-      </div>
+      </div>:<div></div>}
         </div>
     )
 }
