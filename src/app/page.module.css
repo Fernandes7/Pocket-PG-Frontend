@@ -205,7 +205,6 @@
   color: white;
   font-weight: 300;
   font-size: small;
-  margin-top: 50px;
 }
 .foot1{
   padding-top: 35px;
@@ -268,8 +267,8 @@
 }
 
 .logoimage{
-  width: 160px;
-  height: 120px;
+  width: 140px;
+  height: 100px;
 }
 
 .linkdiv{
@@ -279,8 +278,8 @@
 }
 
 .linkdiv button{
-  width: 120px;
-  height: 40px;
+  width: 100px;
+  height: 35px;
   border-radius: 10px;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,164,1) 0%, rgba(110,155,235,1) 100%); 
@@ -288,6 +287,12 @@
   border: none;
   color: white;
   font-family: "Raleway";
+  font-size: 12px;
+  transition: .7s;
+}
+
+.linkdiv button:hover{
+  scale: 1.1;
 }
 
 .linksdiv{
