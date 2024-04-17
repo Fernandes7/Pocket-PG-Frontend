@@ -1,76 +1,52 @@
+"use client"
+
+import { useState } from "react"
 import AmentiesandNaerbylocation from "./comonents/amentiesandnearby"
 import HostelnameDetails from "./comonents/hostelnamedetails"
 import ImagesDivofSelectedHostel from "./comonents/imagesdiv"
+import PolicyandSimilarHostels from "./comonents/policyandsuggesion"
 import SelectedPageTopbar from "./comonents/selctedtopbar"
+import ViewReviews from "./comonents/viewReviews"
 import styles from "./selected.module.css"
+import AddReview from "./comonents/addReview"
+import Customizeprice from "./comonents/customizeprice"
 
 export default function SelectedHostel()
 {
+    const [openViewReview,setViewReview]=useState(false)
+    const [openAddReview,setAddReview]=useState(false)
+    const [openCustomize,setCustomize]=useState(false)
+
+    const handlereview=()=>{
+        setAddReview(false)
+        if(openViewReview===false)
+        setViewReview(true)
+        else
+        setViewReview(false)
+    }
+
+    const handleaddreview=()=>{
+        setAddReview(!openAddReview)
+        setViewReview(false)
+        setCustomize(false)
+    }
+
+    const handlecustomize=()=>{
+        setCustomize(!openCustomize)
+        setAddReview(false)
+        setViewReview(false)
+    }
     return(
         <div className={styles.selectedbg}>
             <div className={styles.selctedinnerbg}>
                 <SelectedPageTopbar />
                 <ImagesDivofSelectedHostel />
-                <HostelnameDetails />
-                <AmentiesandNaerbylocation />
-                <div className={styles.policywrap}>
-                    <div className={styles.policywrapindiv}>
-                        <h3>Policies/Regulation</h3>
-                        <h5>This the need to be Followed strictly</h5>
-                        <div className={styles.policydiv}>
-                            <p>Gate Close Time</p>
-                            <p>6.00 pm</p>
-                        </div>
-                        <div className={styles.policydivwhite}>
-                            <p>Visitors allowed</p>
-                            <p>Yes</p>
-                        </div>
-                        <div className={styles.policydiv}>
-                            <p>Full Time wardern</p>
-                            <p>6.00 pm</p>
-                        </div>
-                        <div className={styles.policydivwhite}>
-                            <p>Notice Period</p>
-                            <p>Yes</p>
-                        </div>
-                        <div className={styles.policydiv}>
-                            <p>Restrictions</p>
-                            <p>6.00 pm</p>
-                        </div>
-                        <div className={styles.policydivwhite}>
-                            <p>Prohibited</p>
-                            <p>Alcahol/Ciggerate</p>
-                        </div>
-                        <div className={styles.policydiv}>
-                            <p>Security Depoite</p>
-                            <p>500/-</p>
-                        </div>
-                    </div>
-                    <div >
-                        <h3 className={styles.similarhostelh3}>Similar Hostels realated to your selection</h3>
-                        <div className={styles.similardiv}>
-                            <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg" alt="hoeelimage" />
-                            <div>
-                                <h3>Hostel name of Villas</h3>
-                                <p>Address Kumabalth Vithayathi 680686</p>
-                            </div>
-                        </div>
-                        <div className={styles.similardiv}>
-                            <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg" alt="hoeelimage" />
-                            <div>
-                                <h3>Hostel name of Villas</h3>
-                                <p>Address Kumabalth Vithayathi 680686</p>
-                            </div>
-                        </div>
-                        <div className={styles.similardiv}>
-                            <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg" alt="hoeelimage" />
-                            <div>
-                                <h3>Hostel name of Villas</h3>
-                                <p>Address Kumabalth Vithayathi 680686</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <HostelnameDetails handlecustomize={handlecustomize} />
+                <AmentiesandNaerbylocation handlereviews={handlereview} addreview={handleaddreview}/>
+                <PolicyandSimilarHostels />
+                {openViewReview && <ViewReviews handlereviews={handlereview}/>}
+                {openAddReview && <AddReview addreview={handleaddreview}/>}
+                {openCustomize && <Customizeprice addcustomize={handlecustomize}/>}
             </div>
         </div>
     )

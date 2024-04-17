@@ -1,6 +1,6 @@
 import styles from "../selected.module.css"
 
-export default function AmentiesandNaerbylocation()
+export default function AmentiesandNaerbylocation({handlereviews,addreview})
 {
     return(
         <div className={styles.amentiesmainwarp}>
@@ -56,6 +56,14 @@ export default function AmentiesandNaerbylocation()
                         <img src="https://cdn-icons-png.flaticon.com/128/3037/3037821.png" alt="" />
                         <p>Sree Padmanabi Swami Shrethram</p>
                      </div>
+                     </div>
+                     <div className={styles.reviewbuttonwrap}>
+                        <div onClick={handlereviews}>
+                            <p>View Reviews</p>
+                        </div>
+                        <div onClick={addreview}>
+                            <p>Add Reviews</p>
+                        </div>
                      </div>
                     </div>
                 </div>

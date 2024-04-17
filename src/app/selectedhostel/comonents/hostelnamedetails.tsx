@@ -1,6 +1,6 @@
 import styles from "../selected.module.css"
 
-export default function HostelnameDetails()
+export default function HostelnameDetails({handlecustomize})
 {
     return(
         <div className={styles.hostelnamediv}>
@@ -31,7 +31,7 @@ export default function HostelnameDetails()
                         <p>/Month</p>
                         </div>
                         <div className={styles.selectedbutton}>
-                        <div>
+                        <div onClick={handlecustomize}>
                             <h3>Customize Price</h3>
                         </div>
                         <button>Book Now</button>
