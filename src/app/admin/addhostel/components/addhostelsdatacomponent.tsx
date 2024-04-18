@@ -14,9 +14,26 @@ export default function AddHostelcomponets()
     hostellongitude?:string,
     hosteltype?:string
     image?:any
+    hostelimagelinks?:string
+    hosteladdress?:string
+    hostelcontactno?:string
+    hostelemail?:string
+    nearbylocations?:string
+    gateclosetime?:string
+    visitorallowed?:string
+    warden?:string
+    noticeperiod?:string
+    restrictions?:string
+    prohibitions?:string
+    securitydeposite?:string
+    Ironing?:string
+    Food?:string
+    Washing?:string
+    customservices?:string
     }
     const [data,Setdata]=useState<Datatype>({})
     const [loading,Setloading]=useState(false)
+    const [customization,setCustomization]=useState<string>("")
     const [services,setServices]=useState([""])
     const handletextdata=(event:React.ChangeEvent<HTMLInputElement>)=>{
     Setdata({...data,[event.target.name]:event.target.value})
@@ -45,6 +62,29 @@ export default function AddHostelcomponets()
         datapasstobackend.append("hosteltype",data.hosteltype!)
         datapasstobackend.append("hostelservices",servicesString)
         datapasstobackend.append("hostelinitialrating",ratingvalue)
+
+        datapasstobackend.append("hostelimagelinks",data.hostelimagelinks)
+        datapasstobackend.append("hosteladdress",data.hosteladdress)
+        datapasstobackend.append("hostelcontactno",data.hostelcontactno)
+        datapasstobackend.append("hostelemail",data.hostelemail)
+        datapasstobackend.append("nearbylocations",data.nearbylocations)
+
+        datapasstobackend.append("gateclosetime",data.gateclosetime)
+        datapasstobackend.append("visitorallowed",data.visitorallowed)
+        datapasstobackend.append("warden",data.warden)
+        datapasstobackend.append("noticeperiod",data.noticeperiod)
+        datapasstobackend.append("restrictions",data.restrictions)
+        datapasstobackend.append("prohibitions",data.prohibitions)
+        datapasstobackend.append("securitydeposite",data.securitydeposite)
+
+        if(customization)
+        {
+            datapasstobackend.append("pricecustomization",customization)
+            datapasstobackend.append("customservices",data.customservices)
+            datapasstobackend.append("Ironing",data.Ironing)
+            datapasstobackend.append("Food",data.Food)
+            datapasstobackend.append("Washing",data.Washing)
+        }
 
         axios.post("http://localhost:8000/addhostel",datapasstobackend).then((responce)=>{
             Setloading(false)
@@ -78,7 +118,33 @@ export default function AddHostelcomponets()
             <input type="checkbox"  onChange={()=>handleservice("Parking-2-wheeler")}/><span>Parking-2-Wheeler</span>
             <input type="checkbox"  onChange={()=>handleservice("Cooking")}/><span>Cooking</span>
             <input type="checkbox"  onChange={()=>handleservice("Parking-4-wheeler")}/><span>Parking-4-Wheeler</span>
-            <input type="checkbox"  onChange={()=>handleservice("Cycle")}/><span>Cycle</span>
+            <input type="checkbox"  onChange={()=>handleservice("Cycle")}/><span>Cycle</span><br />
+
+
+            <input type="text" placeholder="Enter the 4 image link Seperated By Coma" name="hostelimagelinks" onChange={handletextdata}/><br />
+            <input type="text" placeholder="Enter Hostel address with pin" name="hosteladdress" onChange={handletextdata} /><br />
+            <input type="text" placeholder="Hostel Owner Contact No" name="hostelcontactno" onChange={handletextdata} /><br />
+            <input type="text" placeholder="Hostel owner Email" name="hostelemail" onChange={handletextdata} /><br />
+            <input type="text" placeholder="Enter the Neraby Locations Seperated by Comma" name="nearbylocations" onChange={handletextdata} /><br />
+
+            <input type="text" placeholder="Gate Close Time" name="gateclosetime" onChange={handletextdata}  /><br />
+            <input type="text" placeholder="Visitorsallowed" name="visitorallowed" onChange={handletextdata}  /><br />
+            <input type="text" placeholder="Full time warden" name="warden" onChange={handletextdata} /><br />
+            <input type="text" placeholder="Notice Period days count" name="noticeperiod" onChange={handletextdata}/><br />
+            <input type="text" placeholder="Restrictions" name="restrictions" onChange={handletextdata}  /><br />
+            <input type="text" placeholder="Prohibitions (Alcahol drugs)" name="prohibitions" onChange={handletextdata} /><br />
+            <input type="text" placeholder="Security Depoiste Amount" name="securitydeposite" onChange={handletextdata} /><br />
+            
+            <p>Price Customisation</p>
+            <input type="radio" name="selection" onChange={()=>setCustomization("true")} /><label>Yes</label>
+            <input type="radio" name="selection" onChange={()=>setCustomization("")} /><label>No</label>
+            {customization && 
+            <div>
+                <input type="text" placeholder="Enter Services like Washing,Ironing,Food" name="customservices" onChange={handletextdata} /><br />
+                <input type="text" placeholder="Price without Ironing" name="Ironing" onChange={handletextdata} /><br />
+                <input type="text" placeholder="Price without Food" name="Food" onChange={handletextdata} /><br />
+                <input type="text" placeholder="Price Without Washing" name="Washing" onChange={handletextdata} /><br />
+             </div>}
             {loading && <h4>Loading</h4>} <br />
             <button onClick={Senddatatobackend}>Upload data</button>
         </div>
