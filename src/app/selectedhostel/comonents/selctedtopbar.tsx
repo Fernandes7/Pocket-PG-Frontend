@@ -1,11 +1,11 @@
 import styles from "../selected.module.css"
 
-export default function SelectedPageTopbar(){
+export default function SelectedPageTopbar({hostellocation}){
     return(
         <div className={styles.topbar}>
                     <div className={styles.backofselected}>
                         <img src="https://cdn-icons-png.flaticon.com/128/13554/13554816.png" alt="arrowimage" />
-                        <p>Search the Hostel for Location</p>
+                        <p>Search the Hostel for out {hostellocation}</p>
                     </div>
                     <div className={styles.icondivselcted}>
                         <img src="https://cdn-icons-png.flaticon.com/128/707/707680.png" alt="" />

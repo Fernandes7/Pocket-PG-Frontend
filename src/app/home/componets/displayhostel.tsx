@@ -1,9 +1,10 @@
-import { useSearchParams } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import styles from "../home.module.css"
 import axios from "axios"
 import { useEffect, useState } from "react"
 export default function DisplayHostels()
 {
+    const router=useRouter()
     const searchparams=useSearchParams()
     const [hostel,setHosteldata]=useState<any>()
     useEffect(()=>{
@@ -20,9 +21,9 @@ export default function DisplayHostels()
         <div className={styles.displayhosteldivwrap}>
             <h4>Showing Results for {searchparams.get("locationname")}</h4>
             <div className={styles.hostelcardwarp}>
-                {hostel && hostel.map(({hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent}:any)=>{
+                {hostel && hostel.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent}:any)=>{
                  return(
-                    <div className={styles.hostelcard} key={hostelname}>
+                    <div className={styles.hostelcard} key={hostelname} onClick={()=>router.push(`/selectedhostel?hostelid=${_id}`)}>
                     <img src={hostelimage} alt="hostelimage" className={styles.hostelimage} />
                     <div className={styles.hostelcardcontent}>
                        <div className={styles.hostelcardname}>

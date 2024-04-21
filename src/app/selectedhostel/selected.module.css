@@ -194,7 +194,7 @@
 }
 
 .amentieswrap {
-  width: 45%;
+  width: 65%;
 }
 
 .amentieswrapp {
@@ -206,16 +206,17 @@
 
 .displayamenties {
   display: flex;
-  gap: 30px 80px;
+  gap: 30px 100px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
 
 .displayamenties div {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
+  width:15%;
 }
 
 .displayamenties img {
@@ -255,6 +256,9 @@
 .wrapnear div {
   display: flex;
   gap: 5px;
+  width: 30%;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /* Policy Wrap */
@@ -446,8 +450,13 @@
     height: 120px;
     border-radius: 10px;
     background-color: #ffffff;
-background-image: linear-gradient(315deg, #c3eeee 0%, #cccaf5 74%);
+background-image: linear-gradient(315deg, #08034c 0%, #0e088f 74%);
     padding: 10px;
+    color:white;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:10px
 }
 
 .wrapofreview div img{
@@ -594,4 +603,15 @@ border: solid 1px black;
 
 .customizediv div p{
   font-family: "Lato";
+}
+
+.savecustomprice{
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  font-family: "Lato";
+  background: #26292a;
+  color:white;
+  border:none;
 }

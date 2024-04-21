@@ -33,7 +33,7 @@ export default function AddHostelcomponets()
     }
     const [data,Setdata]=useState<Datatype>({})
     const [loading,Setloading]=useState(false)
-    const [customization,setCustomization]=useState<string>("")
+    const [customization,setCustomization]=useState(false)
     const [services,setServices]=useState([""])
     const handletextdata=(event:React.ChangeEvent<HTMLInputElement>)=>{
     Setdata({...data,[event.target.name]:event.target.value})
@@ -79,7 +79,7 @@ export default function AddHostelcomponets()
 
         if(customization)
         {
-            datapasstobackend.append("pricecustomization",customization)
+            datapasstobackend.append("pricecustomization",customization.toString())
             datapasstobackend.append("customservices",data.customservices)
             datapasstobackend.append("Ironing",data.Ironing)
             datapasstobackend.append("Food",data.Food)
@@ -136,8 +136,8 @@ export default function AddHostelcomponets()
             <input type="text" placeholder="Security Depoiste Amount" name="securitydeposite" onChange={handletextdata} /><br />
             
             <p>Price Customisation</p>
-            <input type="radio" name="selection" onChange={()=>setCustomization("true")} /><label>Yes</label>
-            <input type="radio" name="selection" onChange={()=>setCustomization("")} /><label>No</label>
+            <input type="radio" name="selection" onChange={()=>setCustomization(true)} /><label>Yes</label>
+            <input type="radio" name="selection" onChange={()=>setCustomization(false)} /><label>No</label>
             {customization && 
             <div>
                 <input type="text" placeholder="Enter Services like Washing,Ironing,Food" name="customservices" onChange={handletextdata} /><br />
