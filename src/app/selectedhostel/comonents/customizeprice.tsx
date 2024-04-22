@@ -34,7 +34,7 @@ export default function Customizeprice({addcustomize,data,hostelrenthandle,handl
                         <img src="https://cdn-icons-png.flaticon.com/128/3322/3322854.png" alt="" />
                         <p>{item} - {data[item]}rs/Month</p>
                     </div>
-                    <ReactSwitch onChange={()=>handle(key,data[item])} checked={servicesadded.includes(key)?false:true} className={styles.toggle}/>
+                    <ReactSwitch onChange={()=>handle(item,data[item])} checked={servicesadded.includes(item)?false:true} className={styles.toggle}/>
                 </div>
                 )
             })}

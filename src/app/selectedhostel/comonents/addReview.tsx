@@ -5,12 +5,11 @@ import axios from "axios"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function AddReview({addreview})
+export default function AddReview({addreview,success})
 {
     const searchparams=useSearchParams()
     const hostelid=searchparams.get("hostelid")
     const [review,setReview]=useState("")
-    const [data,setData]=useState<any>()
     const [loading,setLoading]=useState(false)
 
     const handle=()=>{
@@ -18,11 +17,12 @@ export default function AddReview({addreview})
         {
         setLoading(true)
         const userid=localStorage.getItem("userid")
-        setData({review:review,hostelid:hostelid,userid:userid})
-        axios.post("http://localhost:8000/sentimental",{data:data}).then((responce)=>{
-        console.log(responce.data)
+        axios.post("http://localhost:8000/sentimental",{data:{review:review,hostelid:hostelid,userid:userid}}).then((responce)=>{
         if(responce.data.success)
-        addreview()
+        {
+        success()
+        setLoading(false)
+        }
         })
         }
         else
