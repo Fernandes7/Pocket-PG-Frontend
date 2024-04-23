@@ -1,11 +1,16 @@
+import MapRating from "@/app/home/componets/mapRating"
 import styles from "../selected.module.css"
+import RatingStar from "./displayRating"
 
-export default function HostelnameDetails({handle,hosteladdress,handlecustomize,hostelname,hostelemail,hostelcontactno,hosteltype,hostelrent,pricecustomization,enabletext})
+export default function HostelnameDetails({handle,hosteladdress,handlecustomize,hostelname,hostelemail,hostelcontactno,hosteltype,hostelrent,pricecustomization,enabletext,hostelinitialrating})
 {
     return(
         <div className={styles.hostelnamediv}>
                     <div className={styles.nameselected}>
+                        <div className={styles.namewithstar}>
                         <h2>{hostelname}</h2>
+                        <RatingStar rating={hostelinitialrating} />
+                        </div>
                         <div className={styles.addresswarp}>
                             <div>
                                 <img src="https://cdn-icons-png.flaticon.com/128/819/819865.png" alt="" />

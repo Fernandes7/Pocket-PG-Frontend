@@ -364,6 +364,7 @@
 .similardiv div p {
   font-family: "Raleway";
   font-size: 12px;
+  color: black;
 }
 
 /* Review Button Wrap */
@@ -406,8 +407,8 @@
 .viewwrap {
   width: 50%;
   height: 50%;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgb(238, 248, 248);
@@ -483,8 +484,8 @@ background-image: linear-gradient(315deg, #08034c 0%, #0e088f 74%);
 .addreviewwrap{
     width: 40%;
     height: 40%;
-    position: absolute;
-    top:100%;
+    position: fixed;
+    top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
     background: rgb(238, 248, 248);
@@ -535,8 +536,8 @@ border: solid 1px black;
 .customwrap{
     width: 40%;
     min-height: 20%;
-    position: absolute;
-    top:80%;
+    position: fixed;
+    top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
     background: rgb(238, 248, 248);
@@ -619,11 +620,11 @@ border: solid 1px black;
 /* Comfored Booking Styles */
 
 .conformwarp{
-  position:absolute;
+  position:fixed;
   background: rgb(220, 239, 248);
   width:600px;
   min-height: 500px;
-  top:100%;
+  top:50%;
   left:50%;
   transform: translate(-50%,-50%);
   border-radius: 10px;
@@ -722,14 +723,14 @@ border: solid 1px black;
 /* Error Div Style */
 
 .errordiv{
-  position: absolute;
+  position: fixed;
   left:50%;
   width:550px;
-  height: 400px;
+  height: 450px;
   border-radius: 10px;
   transform: translate(-50%,-50%);
   transition: all 1s ease-in-out ;
-  background: rgba( 151, 205, 232, 0.35 );
+  background: white;
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 4px );
 -webkit-backdrop-filter: blur( 4px );
@@ -746,8 +747,10 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .openerror{
-  top:100%;
+  top:50%;
 }
+
+
 
 .errordiv img{
   width:500px;
@@ -756,7 +759,44 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .errordiv p{
-  font-family: "Lato";
+  font-family: "Satisfy";
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.errordiv button{
+  background-image: linear-gradient(#0dccea, #0d70ea);
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: Montserrat,sans-serif;
+  font-size: .9em;
+  margin: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* Rating styles of Star */
+
+
+
+.star{
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.namewithstar{
+  display: flex;
+  gap:2%;
+  justify-content: flex-start;
+  align-items: center;
+  
 }

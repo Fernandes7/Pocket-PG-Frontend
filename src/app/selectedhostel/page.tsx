@@ -28,7 +28,6 @@ export default function SelectedHostel()
     const [servicescustomized,setServicescustomized]=useState<any>([])
     const [data,setData]=useState<any>()
     const [similarhsoteldata,setsimilarHosteldata]=useState()
-    const [loading,setLoading]=useState(false)
     const [errordiv,setErrordiv]=useState(false)
     const searchParams=useSearchParams()
     const hostelid=searchParams.get("hostelid")
@@ -122,15 +121,15 @@ export default function SelectedHostel()
         <div className={styles.selectedbg}>
             <ToastContainer />
             <div onClick={()=>setErrordiv(false)}className={`${styles.errordiv} ${errordiv?styles.openerror:styles.closeerror}`}>
-             <img src="https://t4.ftcdn.net/jpg/01/22/60/61/360_F_122606193_Gf37Axx1LjsZkhxUQ2retG2oakjLQ3ZW.jpg" alt="" />
+             <img src="https://learningzila.com/wp-content/uploads/2023/07/istockphoto-1281150061-612x612-1.jpg" alt="" />
              <p>You need to Register First,Then Explore this Feature</p>
-             <p>Click here to close</p>
+             <button>Click Here to close</button>
             </div>
             {(data && hostelrent) ?
             <div className={styles.selctedinnerbg}>
                 <SelectedPageTopbar enableerror={enableerrorfunction} hostellocation={data.hostellocation} liked={isliked} hostelid={data._id} />
                 <ImagesDivofSelectedHostel hostelimage={data.hostelimage} images={data.hostelimagelinks} />
-                <HostelnameDetails handle={handleconformbooking} handlecustomize={handlecustomize} hostelcontactno={data.hostelcontactno} hostelname={data.hostelname} hostelemail={data.hostelemail} hostelrent={hostelrent} hosteltype={data.hosteltype} pricecustomization={data.pricecustomization} hosteladdress={data.hosteladdress} enabletext={servicescustomized && servicescustomized.length>0?true:false}/>
+                <HostelnameDetails hostelinitialrating={data.hostelinitialrating} handle={handleconformbooking} handlecustomize={handlecustomize} hostelcontactno={data.hostelcontactno} hostelname={data.hostelname} hostelemail={data.hostelemail} hostelrent={hostelrent} hosteltype={data.hosteltype} pricecustomization={data.pricecustomization} hosteladdress={data.hosteladdress} enabletext={servicescustomized && servicescustomized.length>0?true:false}/>
                 <AmentiesandNaerbylocation handlereviews={handlereview} addreview={handleaddreview} amenties={data.hostelservices} nearbylocations={data.nearbylocations}/>
                 <PolicyandSimilarHostels visitorallowed={data.visitorallowed} gateclosetime={data.gateclosetime} warden={data.warden} noticeperiod={data.noticeperiod} restrictions={data.restrictions} prohibitions={data.prohibitions} securitydeposite={data.securitydeposite} similarhostel={similarhsoteldata}/>
                 {openViewReview && <ViewReviews handlereviews={handlereview}/>}

@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import MappopupServices from "./mappopupservices";
 import MapRating from "./mapRating";
+
 export default function MapIntegration() {
   const searchparams=useSearchParams()
   const [enablepopup,setPopup]=useState<number>()
@@ -20,6 +21,8 @@ export default function MapIntegration() {
   const fetchmaplocation=()=>{
     setPopup(null)
     const location=searchparams.get("locationname")
+    if(location)
+    {
     axios.post("http://localhost:3002/proxyvh",{data:location}).then((responce)=>{
         if(responce.data.success)
         {
@@ -27,6 +30,18 @@ export default function MapIntegration() {
         console.log(hosteldata)
         }
     })
+  }
+  else
+  {
+    const hostelname=searchparams.get("hostelname")
+    axios.post("http://localhost:8000/sh",{data:{name:hostelname}}).then((responce)=>{
+      if(responce.data.success)
+      {
+      setHosteldata(responce.data.data)
+      console.log(hosteldata)
+      }
+  })
+  }
   }
   const handlepopup=(lat:number,services:string,rating:string)=>{
   setPopup(lat)

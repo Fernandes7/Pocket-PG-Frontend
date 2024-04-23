@@ -2,10 +2,14 @@ import axios from "axios"
 import styles from "../selected.module.css"
 import { Hourglass } from "react-loader-spinner"
 import { useState } from "react"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 export default function ComformBooking({hostelimage,hostelname,hostelrent,hosteladdress,hostelservices,handle,showtost,hostelid,handleconformbooking}){
 
   const[loadings,setLoading]=useState(false)
+
   const checkbooking=()=>{
    const userid=localStorage.getItem("userid")
         if(userid)
@@ -26,7 +30,7 @@ export default function ComformBooking({hostelimage,hostelname,hostelrent,hostel
             }
             else
             {
-                showtost(responce.data.data)
+                toast(responce.data.data)
                 setLoading(false)
                 return
             }
@@ -39,6 +43,7 @@ export default function ComformBooking({hostelimage,hostelname,hostelrent,hostel
   }
     return(
     <div>
+      <ToastContainer />
     <div className={styles.conformwarp}>
       {!loadings? <div>
         <img src="https://cdn-icons-png.flaticon.com/128/5254/5254940.png" alt="" className={styles.closeofviewreview} onClick={handle} />

@@ -7,21 +7,39 @@ export default function DisplayHostels()
     const router=useRouter()
     const searchparams=useSearchParams()
     const [hostel,setHosteldata]=useState<any>()
+
     useEffect(()=>{
         fetchhostelsbasedonlocation()
     },[searchparams])
+
     const fetchhostelsbasedonlocation=()=>{
         const location=searchparams.get("locationname")
+        if(location)
+        {
         axios.post("http://localhost:3002/proxyvh",{data:location}).then((responce)=>{
             if(responce.data.success)
             setHosteldata(responce.data.data)
         })
+        }
+        else
+        {
+            const hostelname=searchparams.get("hostelname")
+            axios.post("http://localhost:8000/sh",{data:{name:hostelname}}).then((responce)=>{
+            if(responce.data.success)
+            setHosteldata(responce.data.data)
+        })
+        }
     }
     return(
         <div className={styles.displayhosteldivwrap}>
-            <h4>Showing Results for {searchparams.get("locationname")}</h4>
+            <h4>Showing Results for Hostels in {searchparams.get("locationname")} location</h4>
+            <div className={styles.sortwrap}>
+                <button>Sort By Price</button>
+                <button>Sort By Review</button>
+                <button>Filter Hostels</button>
+            </div>
             <div className={styles.hostelcardwarp}>
-                {hostel && hostel.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent}:any)=>{
+                {hostel && hostel.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating}:any)=>{
                  return(
                     <div className={styles.hostelcard} key={hostelname} onClick={()=>router.push(`/selectedhostel?hostelid=${_id}`)}>
                     <img src={hostelimage} alt="hostelimage" className={styles.hostelimage} />

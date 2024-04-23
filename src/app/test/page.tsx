@@ -16,6 +16,13 @@ export default function Test()
                 Hey manu
             </div>
             <p>Hello</p>
+            <div className={styles.parent}>
+               
+            <div className={styles.child} onClick={()=>console.log("Child")}>
+                Child
+            </div>
+            <div className={styles.bb} onClick={()=>console.log("parent")}></div>
+            </div>
         </div>
     )
 }
