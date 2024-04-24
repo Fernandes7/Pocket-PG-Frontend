@@ -2,15 +2,45 @@ import { useRouter, useSearchParams } from "next/navigation"
 import styles from "../home.module.css"
 import axios from "axios"
 import { useEffect, useState } from "react"
+import DisplaymapHostels from "./displaycardhostel"
 export default function DisplayHostels()
 {
-    const router=useRouter()
     const searchparams=useSearchParams()
-    const [hostel,setHosteldata]=useState<any>()
+    const [hostel,setHosteldata]=useState<any>([])
+    const [openpricesort,setOpenpricesoart]=useState(false)
+    const [openrateingsort,setOpenratingsort]=useState(false)
+    const [sortenable,setSortenable]=useState(false)
+    const [sorteddata,setsorteddata]=useState<any>()
 
     useEffect(()=>{
         fetchhostelsbasedonlocation()
+        setSortenable(false)
     },[searchparams])
+
+    const opensortpricefunction=()=>{
+        setOpenpricesoart(!openpricesort)
+        setOpenratingsort(false)
+    }
+
+    const openrateingsortfunction=()=>{
+        setOpenratingsort(!openrateingsort)
+        setOpenpricesoart(false)
+    }
+
+    const sorthosteldatafunction=(order:boolean,type:string)=>{
+    setSortenable(true)
+    setOpenpricesoart(false)
+    if(!order)
+    {
+    const sorthostel=[...hostel].sort((a,b)=>a[type]-b[type])
+    setsorteddata(sorthostel)
+    }
+    else
+    {
+        const sorthostel=[...hostel].sort((a,b)=>b[type]-a[type])
+        setsorteddata(sorthostel)
+    }
+    }
 
     const fetchhostelsbasedonlocation=()=>{
         const location=searchparams.get("locationname")
@@ -34,40 +64,33 @@ export default function DisplayHostels()
         <div className={styles.displayhosteldivwrap}>
             <h4>Showing Results for Hostels in {searchparams.get("locationname")} location</h4>
             <div className={styles.sortwrap}>
-                <button>Sort By Price</button>
-                <button>Sort By Review</button>
+                <div className={`${styles.cleardiv} ${sortenable?styles.color:styles.noncolor}`} onClick={()=>setSortenable(false)}>Clear all Options</div>
+                <button onClick={opensortpricefunction}>Sort By Price</button>
+                <button onClick={openrateingsortfunction}>Sort By Review</button>
                 <button>Filter Hostels</button>
             </div>
+            <div className={`${styles.sortrent} ${openpricesort?styles.open:styles.close}`}>
+                <h2>Select the type of sort</h2>
+                <button onClick={()=>sorthosteldatafunction(false,"hostelrent")}>Low to High</button>
+                <button onClick={()=>sorthosteldatafunction(true,"hostelrent")}>High to low</button>
+            </div>
+            <div className={`${styles.sortrent} ${openrateingsort?styles.open:styles.close}`}>
+                <h2>Select the type of Rating Sort</h2>
+                <button onClick={()=>sorthosteldatafunction(false,"hostelinitialrating")}>Lowest rating first</button>
+                <button onClick={()=>sorthosteldatafunction(true,"hostelinitialrating")}>Highest rating first</button>
+            </div>
             <div className={styles.hostelcardwarp}>
-                {hostel && hostel.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating}:any)=>{
+                {sortenable ? 
+                (sorteddata && sorteddata.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating}:any)=>{
+                    return(
+                      <DisplaymapHostels _id={_id} hostelimage={hostelimage} hostelname={hostelname} hostellocation={hostellocation} hosteltown={hosteltown} hosteltype={hosteltype} hostelrent={hostelrent}/>
+                    )
+                   }))
+                   :(hostel && hostel.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating}:any)=>{
                  return(
-                    <div className={styles.hostelcard} key={hostelname} onClick={()=>router.push(`/selectedhostel?hostelid=${_id}`)}>
-                    <img src={hostelimage} alt="hostelimage" className={styles.hostelimage} />
-                    <div className={styles.hostelcardcontent}>
-                       <div className={styles.hostelcardname}>
-                       <h3>{hostelname}</h3>
-                       <p>{hosteltype} Hostel</p>
-                       </div>
-                       <div>
-                           <img src="https://cdn-icons-png.flaticon.com/128/11515/11515653.png" alt="location image" />
-                           <p>{hostellocation},{hosteltown}</p>
-                       </div>
-                       <div>
-                           <img src="https://cdn-icons-png.flaticon.com/128/1828/1828970.png" alt="location image" />
-                           <p>4.7,(2567 Reviews)</p>
-                       </div>
-                       <div className={styles.hostelcardamount}>
-                           <div>
-                               <img src="https://cdn-icons-png.flaticon.com/128/6366/6366707.png" alt="rsimage" />
-                               <h3>{hostelrent}</h3>
-                               <p>/ month</p>
-                           </div>
-                           <img src="https://cdn-icons-png.flaticon.com/128/545/545682.png" alt="" />
-                       </div>
-                    </div>
-                   </div>
+                   <DisplaymapHostels _id={_id} hostelimage={hostelimage} hostelname={hostelname} hostellocation={hostellocation} hosteltown={hosteltown} hosteltype={hosteltype} hostelrent={hostelrent}/>
                  )
-                })}
+                }))}
                 
             </div>
         </div>
