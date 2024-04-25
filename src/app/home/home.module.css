@@ -384,6 +384,26 @@ margin-bottom: 30px;
 
 /* Display hostels page styles */
 
+.unable{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(94, 2, 2, 0.549);
+  border-radius: 10px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.unable h2{
+  font-size: 25px;
+  font-family: "Satisfy";
+  text-align: center;
+  color:rgb(244, 238, 238);
+}
+
 .displayhosteldivwrap{
   width: 100%;
   max-height: 800px;
@@ -408,6 +428,7 @@ font-family: "Questrial";
 }
 
 .hostelcard{
+  position: relative;
   width:420px;
   border-radius: 10px;
   padding: 10px;
@@ -643,6 +664,7 @@ flex-direction: column;
 /* Styles of Sorating and Filtering */
 
 .sortrent{
+  z-index: 10;
   position: absolute;
   top:50%;
   transform: translate(-50%,-50%);
@@ -686,4 +708,80 @@ transition: .8s ease-in-out;
   border-radius: 10px;
   background: rgb(15, 15, 85);
   color: white;
+}
+
+/* Styles of Filter div */
+
+.filteroptionwrap{
+  z-index: 10;
+  position: absolute;
+  top:55%;
+  transform: translate(-50%,-50%);
+  width:400px;
+  height: 350px;
+  border-radius: 10px;
+  background: rgba(172, 241, 249, 0.44);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+transition: .8s ease-in-out;
+padding-bottom: 20px;
+}
+
+.openfilter{
+  left:24%
+}
+
+.closefilter{
+  left:-25%;
+}
+
+.filteroptionwrap h2{
+  font-family: "Raleway";
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.filteroptionwrap p{
+  font-family: "Lato";
+  font-size: 15 px;
+  margin-bottom: 20px;
+}
+
+.optiononewrap{
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+  border:solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:20px;
+  gap:30%;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.452);
+}
+
+.optiononewrap div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+  font-family: "Satisfy";
+}
+
+.filteroptionwrap button{
+  width: 200px;
+  height: 40px;
+  background: rgb(7, 38, 130);
+  border-radius: 10px;
+  margin-top: 20px;
+  color: rgb(246, 246, 247);
+  border: none;
 }

@@ -30,6 +30,9 @@ export default function AddHostelcomponets()
     Food?:string
     Washing?:string
     customservices?:string
+    availablerooms?:string
+    Wifi?:string
+    Ac?:string
     }
     const [data,Setdata]=useState<Datatype>({})
     const [loading,Setloading]=useState(false)
@@ -68,6 +71,10 @@ export default function AddHostelcomponets()
         datapasstobackend.append("hostelcontactno",data.hostelcontactno)
         datapasstobackend.append("hostelemail",data.hostelemail)
         datapasstobackend.append("nearbylocations",data.nearbylocations)
+
+        datapasstobackend.append("availablerooms",data.availablerooms)
+        datapasstobackend.append("Wifi",data.Wifi)
+        datapasstobackend.append("Ac",data.Ac)
 
         datapasstobackend.append("gateclosetime",data.gateclosetime)
         datapasstobackend.append("visitorallowed",data.visitorallowed)
@@ -135,6 +142,10 @@ export default function AddHostelcomponets()
             <input type="text" placeholder="Prohibitions (Alcahol drugs)" name="prohibitions" onChange={handletextdata} /><br />
             <input type="text" placeholder="Security Depoiste Amount" name="securitydeposite" onChange={handletextdata} /><br />
             
+            <input type="number" placeholder="availablerooms" name="availablerooms" onChange={handletextdata} /><br />
+            <input type="text" placeholder="Ac or Non Ac Type Yes or No" name="Ac" onChange={handletextdata} /><br />
+            <input type="text" placeholder="Wifi Type Yes or No" name="Wifi" onChange={handletextdata} /><br />
+           
             <p>Price Customisation</p>
             <input type="radio" name="selection" onChange={()=>setCustomization(true)} /><label>Yes</label>
             <input type="radio" name="selection" onChange={()=>setCustomization(false)} /><label>No</label>

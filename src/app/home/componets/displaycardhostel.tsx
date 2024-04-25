@@ -1,11 +1,14 @@
 import { useRouter } from "next/navigation"
 import styles from "../home.module.css"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function DisplaymapHostels({hostelname,hostelimage,hosteltype,hostellocation,hosteltown,hostelrent,_id})
 {
     const router=useRouter()
     return(
-        <div className={styles.hostelcard} key={hostelname} onClick={()=>router.push(`/selectedhostel?hostelid=${_id}`)}>
+        <div className={styles.hostelcard} key={hostelname} onClick={()=>{hosteltype=="Men" ? router.push(`/selectedhostel?hostelid=${_id}`):toast("We will let you now if it is available")}}>
+        {hosteltype!="Men" && <div className={styles.unable}><h2>Sorry, Currently this hostel is not available</h2></div>}
         <img src={hostelimage} alt="hostelimage" className={styles.hostelimage} />
         <div className={styles.hostelcardcontent}>
            <div className={styles.hostelcardname}>
@@ -29,6 +32,7 @@ export default function DisplaymapHostels({hostelname,hostelimage,hosteltype,hos
                <img src="https://cdn-icons-png.flaticon.com/128/545/545682.png" alt="" />
            </div>
         </div>
+        <ToastContainer />
        </div>
     )
 }
