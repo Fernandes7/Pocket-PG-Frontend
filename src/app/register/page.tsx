@@ -74,7 +74,7 @@ const Register = () => {
       )
       .then((responce: AxiosResponse) => {
         if (responce.data.success === true) {
-          router.push("/home");
+          router.back()
           localStorage.setItem("userid", responce.data.data);
         } else toast(responce.data.data);
       });

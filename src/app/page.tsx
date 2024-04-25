@@ -1,5 +1,4 @@
 "use client"
-import Verifyuserloggined from "./componets/verifyuserloggined"
 import styles from "./page.module.css"
 import kochi from "./images/kochi.jpg"
 import thrissur from "./images/thrissur.jpg"
@@ -11,7 +10,6 @@ import { useRouter } from "next/navigation"
 
 export default function Startpage(){
   const router=useRouter()
-  Verifyuserloggined()
   const movetohomepage=(linkpath:string)=>{
   router.push(linkpath)
   }
@@ -41,7 +39,7 @@ export default function Startpage(){
             <li  onClick={()=>movetohomepage("/about")}>About</li>
             <li  onClick={()=>movetohomepage("/pgservices")}>Services</li>
             <li  onClick={()=>movetohomepage("/contact")}>Contact</li>
-            <li  onClick={()=>movetohomepage("/termsandcondition")}>Term's & Condition</li>
+            <li  onClick={()=>movetohomepage("/termsandcondition")}>Terms & Condition</li>
           </ul>
         </div>
       </div>

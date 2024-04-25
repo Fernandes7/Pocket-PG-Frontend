@@ -144,7 +144,7 @@
 
 .searchfilterdiv {
   display: flex;
-  gap: 10px;
+  gap: 10%;
   position: absolute;
   top: 100px;
   left: 50%;
@@ -154,12 +154,32 @@
 .searchfilterdiv div {
   width: 300px;
   height: 40px;
-  background: rgb(195, 232, 240);
-  display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  flex-wrap: wrap;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #3d457b 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 12px;
   font-family: "Questrial";
 }
 
@@ -364,6 +384,26 @@ margin-bottom: 30px;
 
 /* Display hostels page styles */
 
+.unable{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(94, 2, 2, 0.549);
+  border-radius: 10px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.unable h2{
+  font-size: 25px;
+  font-family: "Satisfy";
+  text-align: center;
+  color:rgb(244, 238, 238);
+}
+
 .displayhosteldivwrap{
   width: 100%;
   max-height: 800px;
@@ -373,8 +413,9 @@ margin-bottom: 30px;
 }
 
 .displayhosteldivwrap h4{
-font-size: 15px;
+font-size: 17px;
 font-family: "Questrial";
+
 }
 
 .hostelcardwarp{
@@ -387,6 +428,7 @@ font-family: "Questrial";
 }
 
 .hostelcard{
+  position: relative;
   width:420px;
   border-radius: 10px;
   padding: 10px;
@@ -461,4 +503,285 @@ box-shadow: 7px 13px 12px -3px rgba(0,0,0,0.21);
 .hostelcardamount img{
   width:20px;
   height: 20px;
+}
+
+/* Filtering and Sort Button Styles */
+
+.sortwrap{
+  display:flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap:10%;
+  margin-top: 30px;
+}
+
+.sortwrap button{
+  width: 200px;
+  height: 40px;
+  background-color:#aae8f5;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.11) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(64, 133, 150, 0.2);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: "Satisfy";
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  color:rgb(12, 12, 12);
+}
+
+.cleardiv{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Satisfy";
+  transition: s ease-in-out;
+}
+
+.color{
+    appearance: button;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, #fff, #f8eedb);
+    border: 0 solid #e5e7eb;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #482307;
+    column-gap: 1rem;
+    cursor: pointer;
+    display: flex;
+    font-size: 100%;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0;
+    outline: 2px solid transparent;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-transform: none;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+}
+
+.searchfilterdiv div:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.searchfilterdiv div:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.sortwrap button:focus {
+  box-shadow: #000106 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.sortwrap button:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #bde5f4 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+/* Search By Name div Style */
+
+.wrapofname{
+  width: 100%;
+  height: 100vh;
+  background:rgba(0, 0, 0, 0.551);
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapofnamediv{
+  width: 500px;
+  height: 300px;
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 15.5px );
+-webkit-backdrop-filter: blur( 15.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+padding: 30px;
+color: white;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+.wrapofnamediv h3{
+  text-align: center;
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.wrapofnamediv p{
+  font-family: "Satisfy";
+}
+
+.wrapofnamediv input{
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  font-family: "Lato";
+  border: none;
+}
+
+
+.wrapofnamediv button{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  margin-top: 30px;
+  background: black;
+  border: none;
+  color: white;
+}
+
+.closename{
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+}
+
+
+/* Styles of Sorating and Filtering */
+
+.sortrent{
+  z-index: 10;
+  position: absolute;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width:400px;
+  height: 280px;
+  border-radius: 10px;
+  background: rgba(172, 241, 249, 0.44);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+transition: .8s ease-in-out;
+}
+
+.open{
+  left:25%;
+}
+
+.close{
+  left:-25%
+}
+
+.sortrent h2{
+  font-family: "Satisfy";
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.sortrent button{
+  width: 200px;
+  height: 40px;
+  font-family: "Raleway";
+  border:none;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: rgb(15, 15, 85);
+  color: white;
+}
+
+/* Styles of Filter div */
+
+.filteroptionwrap{
+  z-index: 10;
+  position: absolute;
+  top:55%;
+  transform: translate(-50%,-50%);
+  width:400px;
+  height: 350px;
+  border-radius: 10px;
+  background: rgba(172, 241, 249, 0.44);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+transition: .8s ease-in-out;
+padding-bottom: 20px;
+}
+
+.openfilter{
+  left:24%
+}
+
+.closefilter{
+  left:-25%;
+}
+
+.filteroptionwrap h2{
+  font-family: "Raleway";
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.filteroptionwrap p{
+  font-family: "Lato";
+  font-size: 15 px;
+  margin-bottom: 20px;
+}
+
+.optiononewrap{
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+  border:solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:20px;
+  gap:30%;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.452);
+}
+
+.optiononewrap div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+  font-family: "Satisfy";
+}
+
+.filteroptionwrap button{
+  width: 200px;
+  height: 40px;
+  background: rgb(7, 38, 130);
+  border-radius: 10px;
+  margin-top: 20px;
+  color: rgb(246, 246, 247);
+  border: none;
 }

@@ -64,6 +64,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .mainsubhead p{
@@ -113,6 +114,7 @@
   gap:10px;
   border: none;
   cursor: pointer;
+  margin-top: 50px;
 }
 
 
@@ -203,7 +205,6 @@
   color: white;
   font-weight: 300;
   font-size: small;
-  margin-top: 50px;
 }
 .foot1{
   padding-top: 35px;
@@ -249,13 +250,25 @@
   background-color: white;
 }
 
+.logoutdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px
+}
+
+.logoutdiv p {
+  font-family: "Satisfy";
+  font-size: 18px;
+}
+
 .headdiv p {
   margin-left: 10px;
 }
 
 .logoimage{
-  width: 160px;
-  height: 120px;
+  width: 140px;
+  height: 100px;
 }
 
 .linkdiv{
@@ -265,15 +278,31 @@
 }
 
 .linkdiv button{
-  width: 120px;
-  height: 40px;
+  width: 100px;
+  height: 35px;
   border-radius: 10px;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,164,1) 0%, rgba(110,155,235,1) 100%); 
+  background-image: linear-gradient(#0dccea, #0d70ea);
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+  box-sizing: border-box;
+  color: #fff;
   cursor: pointer;
-  border: none;
-  color: white;
+  font-family: Montserrat,sans-serif;
+  font-size: .9em;
+  margin: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
   font-family: "Raleway";
+  font-size: 12px;
+  transition: .7s;
+}
+
+.linkdiv button:hover{
+  scale: 1.1;
 }
 
 .linksdiv{
@@ -298,7 +327,7 @@
   height: 50px;
   margin-top: 20px;
   margin-left: 150px;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #034279;
   border: none;
   font-size: 15px;

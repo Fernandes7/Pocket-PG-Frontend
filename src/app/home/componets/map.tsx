@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import MappopupServices from "./mappopupservices";
 import MapRating from "./mapRating";
+
 export default function MapIntegration() {
   const searchparams=useSearchParams()
   const [enablepopup,setPopup]=useState<number>()
@@ -20,13 +21,27 @@ export default function MapIntegration() {
   const fetchmaplocation=()=>{
     setPopup(null)
     const location=searchparams.get("locationname")
-    axios.post("http://localhost:8000/vh",{data:location}).then((responce)=>{
+    if(location)
+    {
+    axios.post("http://localhost:3002/proxyvh",{data:location}).then((responce)=>{
         if(responce.data.success)
         {
         setHosteldata(responce.data.data)
         console.log(hosteldata)
         }
     })
+  }
+  else
+  {
+    const hostelname=searchparams.get("hostelname")
+    axios.post("http://localhost:8000/sh",{data:{name:hostelname}}).then((responce)=>{
+      if(responce.data.success)
+      {
+      setHosteldata(responce.data.data)
+      console.log(hosteldata)
+      }
+  })
+  }
   }
   const handlepopup=(lat:number,services:string,rating:string)=>{
   setPopup(lat)
@@ -47,7 +62,7 @@ export default function MapIntegration() {
         mapboxAccessToken="pk.eyJ1IjoiZmVybm8wMDciLCJhIjoiY2x0amo0ajQyMGgzejJpcXdvM2t3cTVwYSJ9.G88ckj-uEVwDGFQCsJWLVw"
         mapStyle="mapbox://styles/mapbox/streets-v11"
         initialViewState={{
-     latitude: 10.1632, longitude: 76.6413, zoom: 7
+     latitude: 10.1632, longitude: 76.6413, zoom: 9
     }}
       >
         <GeolocateControl
