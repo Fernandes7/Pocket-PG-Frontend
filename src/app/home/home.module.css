@@ -427,6 +427,35 @@ font-family: "Questrial";
   margin-top: 40px;
 }
 
+.hostelcardwarp h1{
+  text-align: center;
+  width: 100%;
+  font-family: "Raleway";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.sorrydiv{
+  position: fixed;
+  top:50%;
+  left:25%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sorrydiv p{
+  font-size: 17px;
+  font-family: "Satisfy";
+}
+
+.sorrydiv img{
+  width: 200px;
+  height: 200px;
+}
+
 .hostelcard{
   position: relative;
   width:49%;

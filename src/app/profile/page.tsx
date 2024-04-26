@@ -45,7 +45,7 @@ export default function Profile()
         <div className={styles.profilemain}>
             {data &&
             <div className={styles.profilewrap}>
-                <img src={data.usergender==="Male"?"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuGFjsxZCvbMuKnsJHFywAKXzJh6SsPWVsifY_z36wVT9p38WQ3IQPDPDjhFPDyxv6YQY&usqp=CAU":(data.usergender=="Female"?"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFqRUic3zKfF7hU1x62hBJKnvfv75K6f8ERlJ2bx4x9Q&s":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFqRUic3zKfF7hU1x62hBJKnvfv75K6f8ERlJ2bx4x9Q&s")} alt="image" />
+                <img src={data.usergender==="Male"?"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuGFjsxZCvbMuKnsJHFywAKXzJh6SsPWVsifY_z36wVT9p38WQ3IQPDPDjhFPDyxv6YQY&usqp=CAU":data.usergender=="Female" ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFqRUic3zKfF7hU1x62hBJKnvfv75K6f8ERlJ2bx4x9Q&s":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFqRUic3zKfF7hU1x62hBJKnvfv75K6f8ERlJ2bx4x9Q&s"} alt="image" />
                 <h2>Hey, {data.username}</h2>
                 <p>You can view and update your profile if needed</p>
                 <div>

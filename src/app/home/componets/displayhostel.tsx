@@ -55,6 +55,7 @@ export default function DisplayHostels()
         const location=searchparams.get("locationname")
         if(location)
         {
+            setHosteldata([])
         axios.post("http://localhost:3002/proxyvh",{data:location}).then((responce)=>{
             if(responce.data.success)
             setHosteldata(responce.data.data)
@@ -63,6 +64,7 @@ export default function DisplayHostels()
         else
         {
             const hostelname=searchparams.get("hostelname")
+            setHosteldata([])
             axios.post("http://localhost:8000/sh",{data:{name:hostelname}}).then((responce)=>{
             if(responce.data.success)
             setHosteldata(responce.data.data)
@@ -121,16 +123,24 @@ export default function DisplayHostels()
            
             <div className={styles.hostelcardwarp}>
                 {sortenable ? 
-                (sorteddata && sorteddata.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating,availablerooms}:any)=>{
+                ((sorteddata && sorteddata.length>0) ? sorteddata.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating,availablerooms}:any)=>{
                     return(
                       <DisplaymapHostels _id={_id} hostelimage={hostelimage} hostelname={hostelname} hostellocation={hostellocation} hosteltown={hosteltown} hosteltype={hosteltype} hostelrent={hostelrent} availablerooms={availablerooms}/>
                     )
-                   }))
-                   :(hostel && hostel.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating,availablerooms}:any)=>{
+                   }):<div className={styles.sorrydiv}>
+                    <img src="https://t3.ftcdn.net/jpg/01/51/57/66/360_F_151576654_IuN8FA80e6scZOf9MSmnjC65l99K2hyA.jpg" alt="imagesso"  />
+                    <h1>Sorry Currently no hostels avaliable in this selection</h1>
+                    <p>We will let you Know when avilable</p>
+                    </div>)
+                   :((hostel && hostel.length>0) ? hostel.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating,availablerooms}:any)=>{
                  return(
                    <DisplaymapHostels _id={_id} hostelimage={hostelimage} hostelname={hostelname} hostellocation={hostellocation} hosteltown={hosteltown} hosteltype={hosteltype} hostelrent={hostelrent} availablerooms={availablerooms}/>
                  )
-                }))}
+                }):<div className={styles.sorrydiv}>
+                <img src="https://t3.ftcdn.net/jpg/01/51/57/66/360_F_151576654_IuN8FA80e6scZOf9MSmnjC65l99K2hyA.jpg" alt="imagesso" />
+                <h1>Sorry Currently no hostels avaliable in this selection !</h1>
+                <p>We will let you Know when avilable</p>
+                </div>)}
                 
             </div>
         </div>
