@@ -6,10 +6,14 @@ import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import axios,{AxiosResponse} from "axios"
 import Cookies from "js-cookie"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function Header()
 {
     const pathname=usePathname()
     const [isLoggined,setIsloggined]=useState<string>("")
+    const [enableprofile,setEnableprofile]=useState(false)
     const router=useRouter()
     useEffect(()=>{
         Verifyuserloggined()
@@ -31,20 +35,54 @@ export default function Header()
       const logoutuser=()=>{
         localStorage.clear()
         setIsloggined("")
+        setEnableprofile(false)
+        toast("Log out Successfully")
         Cookies.remove("accesstoken")
         Cookies.remove("refreshtoken")
       }
+
+      const profileenablefunction=()=>{
+        setEnableprofile(!enableprofile)
+      }
+
+      const gotoprofile=()=>{
+        const userid=localStorage.getItem("userid")
+        if(userid)
+        router.push(`/profile?userid=${userid}`)
+        setEnableprofile(false)
+
+      }
     return(
-        (pathname!=="/register" ?<div className={style.headdiv}>
+       <div>{pathname!=="/register" ?<div className={style.headdiv}>
         <Image src={Logo} alt="Logo" className={style.logoimage}></Image>
         <div className={style.linkdiv}>
            {isLoggined?<div className={style.logoutdiv}>
             <p>Hello, {isLoggined}</p>
-            <button onClick={logoutuser}>Logout</button>
+            <button onClick={profileenablefunction}>Profile</button>
            </div>:<button onClick={()=>router.push("/register")}>Login</button>} 
             <button>Add Hostel</button>
         </div>
-    </div>:<div></div>)
+    </div>:<div></div>}
+    <div className={`${style.profilewarp} ${enableprofile ? style.openprofile:style.closeprofile}`}>
+     <div className={style.eachprofile} onClick={gotoprofile}>
+      <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" />
+      <p>Profile view/Update</p>
+     </div>
+     <div className={style.eachprofile}>
+      <img src="https://cdn-icons-png.flaticon.com/128/171/171322.png" alt="" />
+      <p>Your Bookings</p>
+     </div>
+     <div className={style.eachprofile}>
+      <img src="https://cdn-icons-png.flaticon.com/128/1077/1077086.png" alt="" />
+      <p>Your Favorites Hostel</p>
+     </div>
+     <div className={style.eachprofile} onClick={logoutuser}>
+      <img src="https://cdn-icons-png.flaticon.com/128/4034/4034229.png" alt="" />
+      <p>Logout</p>
+     </div>
+    </div>
+    <ToastContainer />
+    </div>
         
     )
 }

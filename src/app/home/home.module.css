@@ -421,7 +421,7 @@ font-family: "Questrial";
 .hostelcardwarp{
   display:flex;
   flex-wrap: wrap;
-  gap:10px;
+  gap:2%;
   width: 100%;
   border-radius: 10px;
   margin-top: 40px;
@@ -429,7 +429,7 @@ font-family: "Questrial";
 
 .hostelcard{
   position: relative;
-  width:420px;
+  width:49%;
   border-radius: 10px;
   padding: 10px;
   display: flex;
@@ -440,7 +440,7 @@ background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(248, 247, 247) 0%,
 }
 
 .hostelimage{
-  width: 400px;
+  width: 95%;
   height: 300px;
   border-radius: 5px;
   -webkit-box-shadow: 7px 13px 12px -3px rgba(0,0,0,0.21);
@@ -718,7 +718,7 @@ transition: .8s ease-in-out;
   top:55%;
   transform: translate(-50%,-50%);
   width:400px;
-  height: 350px;
+  height: 420px;
   border-radius: 10px;
   background: rgba(172, 241, 249, 0.44);
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );

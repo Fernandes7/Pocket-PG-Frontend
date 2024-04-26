@@ -1,0 +1,78 @@
+.profilemain{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilewrap{
+    width: 450px;
+    height: 770px;
+    background-color: rgb(3, 8, 85);
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 17px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 17px -10px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 17px -10px rgba(0,0,0,0.75);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profilewrap img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+.profilewrap h2{
+    font-family: "Raleway";
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.profilewrap p{
+    font-family: "Lato";
+    margin-bottom: 30px;
+}
+
+.profilewrap div{
+    background: white;
+    width:90%;
+    height: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.profilewrap input{
+    width: 80%;
+    height: 40px;
+    border:none;
+    border-radius: 10px;
+    font-family: "Raleway";
+    padding: 10px;
+}
+
+.profilewrap button{
+    background: black;
+    width: 200px;
+    height: 40px;
+    font-family: "Lato";
+    color:white;
+    border-radius: 10px;
+}
+
+.profilewrap h3{
+    font-family: "Raleway";
+    font-size: 17px;
+    color:black;
+    font-weight: 400;
+}

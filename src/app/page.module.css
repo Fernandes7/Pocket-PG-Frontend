@@ -106,9 +106,9 @@
   align-items: center;
   width: 400px;
   height: 60px;
-  border-radius: 50px;
+  border-radius: 10px;
   background: rgb(2,0,36);
-  background: linear-gradient(100deg, rgb(144, 142, 187) 0%, rgb(221, 244, 247) 0%, rgb(186, 252, 255) 9%, rgb(160, 208, 247) 64%); 
+  background: linear-gradient(100deg, rgb(1, 1, 13) 0%, rgb(221, 244, 247) 0%, rgb(186, 252, 255) 9%, rgb(160, 208, 247) 64%); 
   padding: 20px;
   color: black;
   gap:10px;
@@ -328,9 +328,64 @@
   margin-top: 20px;
   margin-left: 150px;
   border-radius: 5px;
-  background: #034279;
+  background: #abcfef;
   border: none;
   font-size: 15px;
   cursor: pointer;
   color: white;
 }
+
+
+/* Profile page Div */
+
+.profilewarp{
+  width: 20%;
+  height: 250px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4.5px );
+ -webkit-backdrop-filter: blur( 4.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 10px;
+  position: absolute;
+  left:78%;
+  z-index: 100;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  gap:10px
+}
+
+.openprofile{
+  top:15%;
+}
+
+.closeprofile{
+ top:-50%
+}
+
+.eachprofile{
+  width: 80%;
+  height: 40px;
+  background-color: rgb(203, 248, 252);
+  border-radius: 5px;
+  display: flex;
+  gap:10px;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.eachprofile img{
+  width: 20px;
+  height: 20px;
+}
+
+.eachprofile p{
+  font-family: "Raleway";
+  font-size: 15px;
+}
+

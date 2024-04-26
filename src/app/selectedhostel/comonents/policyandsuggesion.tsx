@@ -1,7 +1,9 @@
+import { useRouter } from "next/navigation"
 import styles from "../selected.module.css"
 
 export default function PolicyandSimilarHostels({gateclosetime,visitorallowed,warden,noticeperiod,restrictions,prohibitions,securitydeposite,similarhostel})
 {
+    const router=useRouter()
     return(
         <div className={styles.policywrap}>
         <div className={styles.policywrapindiv}>
@@ -39,9 +41,9 @@ export default function PolicyandSimilarHostels({gateclosetime,visitorallowed,wa
         <div  className={styles.similardivs}>
             <h3 className={styles.similarhostelh3}>Similar Hostels realated to your selection</h3>
             <p className={styles.pofsimilar}>Go Through the this suggetions also</p>
-            {similarhostel.map(({hostelimage,hostelname,hosteladdress})=>{
+            {similarhostel.map(({_id,hostelimage,hostelname,hosteladdress})=>{
                 return(
-                    <div className={styles.similardiv}>
+                    <div className={styles.similardiv} onClick={()=>router.push(`/selectedhostel?hostelid=${_id}`)}>
                 <img src={hostelimage} alt="hoeelimage" />
                 <div>
                     <h3>{hostelname}</h3>

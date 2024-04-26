@@ -3,12 +3,12 @@ import styles from "../home.module.css"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function DisplaymapHostels({hostelname,hostelimage,hosteltype,hostellocation,hosteltown,hostelrent,_id})
+export default function DisplaymapHostels({hostelname,hostelimage,hosteltype,hostellocation,hosteltown,hostelrent,_id,availablerooms})
 {
     const router=useRouter()
     return(
-        <div className={styles.hostelcard} key={hostelname} onClick={()=>{hosteltype=="Men" ? router.push(`/selectedhostel?hostelid=${_id}`):toast("We will let you now if it is available")}}>
-        {hosteltype!="Men" && <div className={styles.unable}><h2>Sorry, Currently this hostel is not available</h2></div>}
+        <div className={styles.hostelcard} key={hostelname} onClick={()=>{availablerooms>0 ? router.push(`/selectedhostel?hostelid=${_id}`):toast("We will let you now if it is available")}}>
+        {availablerooms==0 && <div className={styles.unable}><h2>Sorry, Currently this hostel is not available</h2></div>}
         <img src={hostelimage} alt="hostelimage" className={styles.hostelimage} />
         <div className={styles.hostelcardcontent}>
            <div className={styles.hostelcardname}>
