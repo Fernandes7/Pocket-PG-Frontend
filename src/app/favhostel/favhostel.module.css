@@ -1,0 +1,76 @@
+.favmainwarp{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 110vh;
+    
+}
+
+.favwarp{
+    width: 50%;
+    padding: 20px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    background: rgba(194, 187, 186, 0.574);
+    border-radius: 10px;
+    flex-direction: column;
+    overflow-y: auto;
+    gap:10px
+}
+
+.favwarp h2{
+    text-align: "center";
+    font-family: "Raleway";
+    color:black;
+    font-size: 25px;
+    
+}
+
+.favp{
+font-family: "Satisfy";
+font-size: 18px;
+margin-bottom: 40px;
+color:black;
+}
+
+.favdiv{
+    width: 80%;
+    min-height: 150px;
+    border-radius: 10px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5%;
+    -webkit-box-shadow: 10px 10px 13px -10px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 13px -10px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 13px -10px rgba(0,0,0,0.75);
+}
+
+.favdivimg{
+    width: 300px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.favdiv div{
+    width: 40%;
+    cursor: pointer;
+}
+
+.deletebin{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.favdiv h3{
+    font-family: "Raleway";
+}
+
+.favdiv p{
+    font-family: "Lato";
+}
+

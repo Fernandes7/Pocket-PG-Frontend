@@ -448,12 +448,11 @@
 
 .wrapofreview div{
     width: 45%;
-    height: 120px;
+    height: 80px;
     border-radius: 10px;
     background-color: #ffffff;
-background-image: linear-gradient(315deg, #08034c 0%, #0e088f 74%);
+    border:solid 1px black;
     padding: 10px;
-    color:white;
     display:flex;
     justify-content: flex-start;
     align-items: center;
@@ -583,7 +582,7 @@ border: solid 1px black;
   -moz-box-shadow: 10px 10px 10px -8px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 10px -8px rgba(0, 0, 0, 0.75);
   padding: 10px;
-  background: #a5d5e9;
+  background:rgb(154, 211, 244);
   display: flex;
   justify-content: space-between;
   align-items: center;

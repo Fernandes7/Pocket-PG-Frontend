@@ -41,13 +41,29 @@ export default function DisplayHostels()
     setOpenratingsort(false)
     if(!order)
     {
-    const sorthostel=[...hostel].sort((a,b)=>a[type]-b[type])
-    setsorteddata(sorthostel)
+    if(sorteddata.length>0)
+    {
+        const sorthostel=[...sorteddata].sort((a,b)=>a[type]-b[type])
+        setsorteddata(sorthostel)  
     }
     else
     {
-        const sorthostel=[...hostel].sort((a,b)=>b[type]-a[type])
-        setsorteddata(sorthostel)
+    const sorthostel=[...hostel].sort((a,b)=>a[type]-b[type])
+    setsorteddata(sorthostel)
+    }
+    }
+    else
+    {
+        if(sorteddata.length>0)
+    {
+        const sorthostel=[...sorteddata].sort((a,b)=>b[type]-a[type])
+        setsorteddata(sorthostel)  
+    }
+    else
+    {
+    const sorthostel=[...hostel].sort((a,b)=>b[type]-a[type])
+    setsorteddata(sorthostel)
+    }
     }
     }
 
@@ -83,24 +99,11 @@ export default function DisplayHostels()
     }
 
     const addafilterfunction=()=>{
-        
-    if(sorteddata.length>0)
-    {
-        const filterdata=sorteddata.filter((item:any)=>{
-            return(
-               ( (filteroption.hosteltype==="" || item.hosteltype===filteroption.hosteltype)&&(filteroption.Wifi==="" || item.Wifi===filteroption.Wifi)&&(filteroption.Ac==="" || item.Ac===filteroption.Ac)&&(filteroption.available===""||(filteroption.available=="yes"?item.availablerooms>0:item.availablerooms===0)))
-            )
-        })
-        setsorteddata(filterdata)
-    }
-    else
-    {
       const filterdata=hostel.filter((item:any)=>{
 
             return ((filteroption.hosteltype==="" || item.hosteltype===filteroption.hosteltype)&&(filteroption.Wifi==="" || item.Wifi===filteroption.Wifi)&&(filteroption.Ac==="" || item.Ac===filteroption.Ac))
         })
         setsorteddata(filterdata)  
-    }
     setSortenable(true)
     setOpenfilter(false)
     }

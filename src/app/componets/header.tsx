@@ -52,15 +52,24 @@ export default function Header()
         setEnableprofile(false)
 
       }
+
+      const gotoFavhostel=()=>{
+        setEnableprofile(false)
+        router.push("/favhostel")
+      }
+
+      const gotoAddRequest=()=>{
+        router.push("/addrequest")
+      }
     return(
        <div>{pathname!=="/register" ?<div className={style.headdiv}>
-        <Image src={Logo} alt="Logo" className={style.logoimage}></Image>
+        <Image src={Logo} alt="Logo" className={style.logoimage} onClick={()=>router.push("/")}></Image>
         <div className={style.linkdiv}>
            {isLoggined?<div className={style.logoutdiv}>
             <p>Hello, {isLoggined}</p>
             <button onClick={profileenablefunction}>Profile</button>
            </div>:<button onClick={()=>router.push("/register")}>Login</button>} 
-            <button>Add Hostel</button>
+            <button onClick={gotoAddRequest}>Add Hostel</button>
         </div>
     </div>:<div></div>}
     <div className={`${style.profilewarp} ${enableprofile ? style.openprofile:style.closeprofile}`}>
@@ -72,7 +81,7 @@ export default function Header()
       <img src="https://cdn-icons-png.flaticon.com/128/171/171322.png" alt="" />
       <p>Your Bookings</p>
      </div>
-     <div className={style.eachprofile}>
+     <div className={style.eachprofile} onClick={gotoFavhostel}>
       <img src="https://cdn-icons-png.flaticon.com/128/1077/1077086.png" alt="" />
       <p>Your Favorites Hostel</p>
      </div>

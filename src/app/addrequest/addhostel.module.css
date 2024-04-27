@@ -1,0 +1,67 @@
+.addhostelwarp{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(240, 236, 236);
+}
+
+.addhosteldiv{
+    width: 40%;
+    height: 60vh;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+}
+
+.addhosteldiv h1{
+    font-family: "Raleway";
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.addhosteldiv p{
+    font-family: "Raleway";
+    margin-bottom: 50px;
+}
+
+.addhosteldiv div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.addhosteldiv div input{
+    width: 80%;
+    height: 60px;
+    padding: 10px;
+    font-family: "Lato";
+    margin-bottom: 10px;
+    background-color: rgb(3, 11, 94);
+    color:white;
+    border-radius: 10px;
+    border: none;
+}
+
+.addhosteldiv button{
+    width:200px;
+    height: 50px;
+    border:none;
+    background-color: rgb(0, 0, 10);
+    border-radius: 10px;
+    color:white;
+    font-family: "Lato";
+    cursor: pointer;
+}
+
+.addhosteldiv img{
+    width: 200px;
+    height: 200px;
+}
+

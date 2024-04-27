@@ -25,7 +25,6 @@ export default function ComformBooking({hostelimage,hostelname,hostelrent,hostel
             if(responce.data.success)
             {
             setLoading(false)
-            handleconformbooking()
             showtost("Your Booking is Successfull")
             }
             else
