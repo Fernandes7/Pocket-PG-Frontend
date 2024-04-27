@@ -84,9 +84,11 @@
 }
 
 .homepageinitialdatawrap h4 {
-  font-family: "Questrial";
   margin: 80px 0px 30px 0px;
   font-size: 25px;
+  font-family: "Raleway";
+  font-weight: 500;
+  
 }
 
 .locationcard {
@@ -137,7 +139,8 @@
 }
 
 .locationtext p {
-  font-size: 10px;
+  font-size: 12px;
+  font-family: "Raleway";
 }
 
 /* Search Option div Styles */

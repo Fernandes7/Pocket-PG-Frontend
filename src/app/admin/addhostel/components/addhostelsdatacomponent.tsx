@@ -52,7 +52,7 @@ export default function AddHostelcomponets()
 
     const Senddatatobackend=()=>{
         Setloading(true)
-        const ratingvalue=JSON.stringify((services.length/12)*5)
+        const ratingvalue=JSON.stringify(((services.length/12)*5).toFixed(3))
         const servicesString = JSON.stringify(services);
         const datapasstobackend=new FormData()
         datapasstobackend.append("hostelname",data.hostelname!)

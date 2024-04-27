@@ -109,7 +109,7 @@
   height: 60px;
   border-radius: 10px;
   background: rgb(2,0,36);
-  background: linear-gradient(100deg, rgb(1, 1, 13) 0%, rgb(221, 244, 247) 0%, rgb(186, 252, 255) 9%, rgb(160, 208, 247) 64%); 
+  background: linear-gradient(100deg, rgba(2,0,36,1) 0%, rgba(239,241,246,1) 0%, rgba(119, 150, 236, 0.731) 100%); 
   padding: 20px;
   color: black;
   gap:10px;
@@ -206,21 +206,28 @@
   color: white;
   font-weight: 300;
   font-size: small;
+  width: 100%;
 }
 .foot1{
   padding-top: 35px;
   display: flex;
   padding-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: "Raleway";
 }
 .footerleft{
   padding-left: 65px;
   padding-right: 85px;
   width: 50%;
+  font-weight: 400;
 
 }
 .footerright{
-  width: 50%;
   padding-left: 275px;
+  margin-right: 100px;
+  font-weight: 400;
 }
 .footerbottom{
   padding-top: 15px;
@@ -228,6 +235,8 @@
   text-align: center;
   background-color: #043266;
   padding-bottom: 15px;
+  font-family: "Satisfy";
+  font-size: 18px;
 }
 .places{
   display: flex;
@@ -350,7 +359,7 @@
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   border-radius: 10px;
-  position: absolute;
+  position: fixed;
   left:78%;
   z-index: 100;
   transition: 1s;

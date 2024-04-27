@@ -61,6 +61,11 @@ export default function Header()
       const gotoAddRequest=()=>{
         router.push("/addrequest")
       }
+
+      const gotoYourbooking=()=>{
+        router.push("/booking")
+        setEnableprofile(false)
+      }
     return(
        <div>{pathname!=="/register" ?<div className={style.headdiv}>
         <Image src={Logo} alt="Logo" className={style.logoimage} onClick={()=>router.push("/")}></Image>
@@ -77,7 +82,7 @@ export default function Header()
       <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="" />
       <p>Profile view/Update</p>
      </div>
-     <div className={style.eachprofile}>
+     <div className={style.eachprofile} onClick={gotoYourbooking}>
       <img src="https://cdn-icons-png.flaticon.com/128/171/171322.png" alt="" />
       <p>Your Bookings</p>
      </div>

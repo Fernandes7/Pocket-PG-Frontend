@@ -1,0 +1,97 @@
+.bookingmainwrap{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(231, 230, 230);
+}
+
+.bookinginnerdiv{
+    width: 40%;
+    background: rgb(250, 250, 253);
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 17px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 17px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 17px -8px rgba(0,0,0,0.75);
+overflow-y: auto;
+}
+
+.bookinginnerdiv h2{
+    font-family: "Raleway";
+    font-weight: 500;
+}
+
+.bookinginnerdiv p{
+    font-family: "Questrial";
+}
+
+.cardofbooking{
+    width: 60%;
+    height: 500px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 100px;
+    
+}
+
+.cardofbookingimg{
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.cardofbookingdiv{
+    position: absolute;
+    width: 100%;
+    top:80%;
+    background: rgb(228, 246, 252);
+    height: 150px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardofbookingdiv h3   {
+    font-family: 10px;
+    font-family: "Raleway";
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.locationinbooking{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 15px;
+    gap:10px;
+    width: 90%;
+    margin-top: 10px;
+
+}
+
+.locationinbooking img{
+    width: 25px;
+    height: 25px;
+}
+
+.nobookdiv img{
+    width: 400px;
+    height: 300px;
+}
+
+.nobookdiv p{
+    text-align: center;
+    color:red;
+    font-size: 20px;
+}
+
+

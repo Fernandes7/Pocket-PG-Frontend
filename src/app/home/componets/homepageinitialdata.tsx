@@ -15,7 +15,7 @@ export default function HomepageInitialdata()
     }
     return(
         <div className={styles.homepageinitialdatawrap}>
-            <h4>Locations we Serve</h4>
+            <h4>The Locations we serve our services</h4>
             <div className={styles.locationwrap}>
                 {locationdata && locationdata.map(({locationname,imageurl,hostelcount}:any)=>{
                     return(
