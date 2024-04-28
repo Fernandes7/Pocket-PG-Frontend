@@ -1,0 +1,113 @@
+.hosteloptionwrap{
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 100px;
+    flex-direction: column;
+}
+
+.addhosteladmin{
+    width: 300px;
+    border-radius: 10px;
+    height: 100px;
+    border: solid 1px rgb(23, 33, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addhosteladmin div{
+    display: flex;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.addhosteladmin img{
+    width: 30px;
+    height: 30px;
+}
+
+.addhosteladmin h2{
+    font-family: "Raleway";
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.adminhosteldiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap:20px 20px;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.hostelwrap{
+    width: 400px;
+    height: 350px;
+    background: rgb(249, 246, 249);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 14px -10px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 14px -10px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 14px -10px rgba(0,0,0,0.75);
+}
+
+.hostelwrapimg{
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.hostelwrap h1{
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.hostelwrapdiv{
+    display: flex;
+    gap:10px;
+    justify-content: flex-start;
+    width: 90%;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.hostelwrap div img{
+    width: 25px;
+    height: 25px;
+}
+
+.hostelwrap div p{
+    font-family: "Raleway";
+    font-size: 15px;
+
+}
+
+.optiondiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20%;
+    width: 90%;
+    border-top: solid 1px black;
+}
+
+.optiondiv img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.optiondiv img:hover{
+    scale: 1.2;
+}

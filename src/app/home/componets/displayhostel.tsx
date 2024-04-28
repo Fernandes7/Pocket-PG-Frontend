@@ -15,7 +15,7 @@ export default function DisplayHostels()
     const [sortenable,setSortenable]=useState(false)
     const [openfilter,setOpenfilter]=useState(false)
     const [sorteddata,setsorteddata]=useState<any>()
-    const [filteroption,setFilterOPtion]=useState({hosteltype:"",Wifi:"",Ac:"",available:""})
+    const [filteroption,setFilterOPtion]=useState({hosteltype:"",Wifi:"",Ac:"",availablerooms:""})
 
     useEffect(()=>{
         fetchhostelsbasedonlocation()
@@ -101,7 +101,7 @@ export default function DisplayHostels()
     const addafilterfunction=()=>{
       const filterdata=hostel.filter((item:any)=>{
 
-            return ((filteroption.hosteltype==="" || item.hosteltype===filteroption.hosteltype)&&(filteroption.Wifi==="" || item.Wifi===filteroption.Wifi)&&(filteroption.Ac==="" || item.Ac===filteroption.Ac))
+            return ((filteroption.hosteltype==="" || item.hosteltype===filteroption.hosteltype)&&(filteroption.Wifi==="" || item.Wifi===filteroption.Wifi)&&(filteroption.Ac==="" || item.Ac===filteroption.Ac)&&(filteroption.availablerooms==="" ||(filteroption.availablerooms==="Yes" ? item.availablerooms>0:item.availablerooms===0)))
         })
         setsorteddata(filterdata)  
     setSortenable(true)
@@ -126,18 +126,18 @@ export default function DisplayHostels()
            
             <div className={styles.hostelcardwarp}>
                 {sortenable ? 
-                ((sorteddata && sorteddata.length>0) ? sorteddata.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating,availablerooms}:any)=>{
+                ((sorteddata && sorteddata.length>0) ? sorteddata.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating,availablerooms,Ac,Wifi}:any)=>{
                     return(
-                      <DisplaymapHostels _id={_id} hostelimage={hostelimage} hostelname={hostelname} hostellocation={hostellocation} hosteltown={hosteltown} hosteltype={hosteltype} hostelrent={hostelrent} availablerooms={availablerooms}/>
+                      <DisplaymapHostels Wifi={Wifi} Ac={Ac} hostelinitialrating={hostelinitialrating} _id={_id} hostelimage={hostelimage} hostelname={hostelname} hostellocation={hostellocation} hosteltown={hosteltown} hosteltype={hosteltype} hostelrent={hostelrent} availablerooms={availablerooms}/>
                     )
                    }):<div className={styles.sorrydiv}>
                     <img src="https://t3.ftcdn.net/jpg/01/51/57/66/360_F_151576654_IuN8FA80e6scZOf9MSmnjC65l99K2hyA.jpg" alt="imagesso"  />
                     <h1>Sorry Currently no hostels avaliable in this selection</h1>
                     <p>We will let you Know when avilable</p>
                     </div>)
-                   :((hostel && hostel.length>0) ? hostel.map(({_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating,availablerooms}:any)=>{
+                   :((hostel && hostel.length>0) ? hostel.map(({Ac,Wifi,_id,hostelname,hostellocation,hosteltown,hostelimage,hosteltype,hostelrent,hostelinitialrating,availablerooms}:any)=>{
                  return(
-                   <DisplaymapHostels _id={_id} hostelimage={hostelimage} hostelname={hostelname} hostellocation={hostellocation} hosteltown={hosteltown} hosteltype={hosteltype} hostelrent={hostelrent} availablerooms={availablerooms}/>
+                   <DisplaymapHostels Ac={Ac} Wifi={Wifi} hostelinitialrating={hostelinitialrating} _id={_id} hostelimage={hostelimage} hostelname={hostelname} hostellocation={hostellocation} hosteltown={hosteltown} hosteltype={hosteltype} hostelrent={hostelrent} availablerooms={availablerooms}/>
                  )
                 }):<div className={styles.sorrydiv}>
                 <img src="https://t3.ftcdn.net/jpg/01/51/57/66/360_F_151576654_IuN8FA80e6scZOf9MSmnjC65l99K2hyA.jpg" alt="imagesso" />

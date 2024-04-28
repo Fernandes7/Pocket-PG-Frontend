@@ -2,6 +2,9 @@
 
 import axios from "axios"
 import { useState } from "react"
+import styles from "../addhostel.module.css"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function AddHostelcomponets()
 {
@@ -52,7 +55,7 @@ export default function AddHostelcomponets()
 
     const Senddatatobackend=()=>{
         Setloading(true)
-        const ratingvalue=JSON.stringify(((services.length/12)*5).toFixed(3))
+        const ratingvalue=JSON.stringify((services.length/12)*5)
         const servicesString = JSON.stringify(services);
         const datapasstobackend=new FormData()
         datapasstobackend.append("hostelname",data.hostelname!)
@@ -97,15 +100,16 @@ export default function AddHostelcomponets()
             Setloading(false)
             if(responce.data.success)
             {
-            alert("Hostel data uploaded successfully")
+            toast("Hostel data uploaded successfully")
             }
             else
-            alert("Failed to upload image and data of Hostels")
+            toast("Failed to upload image and data of Hostels")
         })
     }
     
     return(
-        <div>
+         <div className={styles.admininputwrap}>
+            <div className={styles.innerinput}>
             <input type="text" placeholder="Enter the Hostel Name" name="hostelname" onChange={handletextdata}/><br />
             <input type="text" placeholder="Enter the Hostel Location" name="hostellocation" onChange={handletextdata}/><br />
             <input type="text" placeholder="Enter the Hostel town" name="hosteltown" onChange={handletextdata}/><br />
@@ -114,6 +118,9 @@ export default function AddHostelcomponets()
             <input type="number" placeholder="Enter the Hostel Latitude" name="hostellatitude" onChange={handletextdata}/><br />
             <input type="number" placeholder="Enter the Hostel Longitude" name="hostellongitude" onChange={handletextdata}/><br />
             <input  type="text" placeholder="Enter the Hostel Type (Men or Women)" name="hosteltype" onChange={handletextdata}/><br />
+            </div>
+            
+            <div className={styles.radioinputdiv}>
             <input type="checkbox"  onChange={()=>handleservice("Wifi")}/><span>Wifi</span>
             <input type="checkbox"  onChange={()=>handleservice("Ac")}/><span>Ac</span>
             <input type="checkbox"  onChange={()=>handleservice("Wash")}/><span>Washing</span>
@@ -126,8 +133,9 @@ export default function AddHostelcomponets()
             <input type="checkbox"  onChange={()=>handleservice("Cooking")}/><span>Cooking</span>
             <input type="checkbox"  onChange={()=>handleservice("Parking-4-wheeler")}/><span>Parking-4-Wheeler</span>
             <input type="checkbox"  onChange={()=>handleservice("Cycle")}/><span>Cycle</span><br />
+            </div>
 
-
+            <div className={styles.innerinput}>
             <input type="text" placeholder="Enter the 4 image link Seperated By Coma" name="hostelimagelinks" onChange={handletextdata}/><br />
             <input type="text" placeholder="Enter Hostel address with pin" name="hosteladdress" onChange={handletextdata} /><br />
             <input type="text" placeholder="Hostel Owner Contact No" name="hostelcontactno" onChange={handletextdata} /><br />
@@ -145,19 +153,23 @@ export default function AddHostelcomponets()
             <input type="number" placeholder="availablerooms" name="availablerooms" onChange={handletextdata} /><br />
             <input type="text" placeholder="Ac or Non Ac Type Yes or No" name="Ac" onChange={handletextdata} /><br />
             <input type="text" placeholder="Wifi Type Yes or No" name="Wifi" onChange={handletextdata} /><br />
-           
+            </div>
+
             <p>Price Customisation</p>
+            <div className={styles.radioinputdiv}>
             <input type="radio" name="selection" onChange={()=>setCustomization(true)} /><label>Yes</label>
             <input type="radio" name="selection" onChange={()=>setCustomization(false)} /><label>No</label>
+            </div>
             {customization && 
-            <div>
+            <div className={styles.innerinput}>
                 <input type="text" placeholder="Enter Services like Washing,Ironing,Food" name="customservices" onChange={handletextdata} /><br />
                 <input type="text" placeholder="Price without Ironing" name="Ironing" onChange={handletextdata} /><br />
                 <input type="text" placeholder="Price without Food" name="Food" onChange={handletextdata} /><br />
                 <input type="text" placeholder="Price Without Washing" name="Washing" onChange={handletextdata} /><br />
              </div>}
             {loading && <h4>Loading</h4>} <br />
-            <button onClick={Senddatatobackend}>Upload data</button>
+            {!loading &&<button onClick={Senddatatobackend}>Upload data</button>}
+            <ToastContainer />
         </div>
     )
 }

@@ -18,17 +18,17 @@ export  default function FilteroptionDiv({openfilter,handlefilter,addafilterfunc
             </div>
             <div className={styles.optiononewrap}>
                 <div>
-                    <input type="radio" name="Ac" value="yes" onChange={handlefilter}/>
+                    <input type="radio" name="Ac" value="Yes" onChange={handlefilter}/>
                     <label>Ac</label>
                 </div>
                  <div>
-                    <input type="radio" name="Ac" value="no"  onChange={handlefilter}/>
+                    <input type="radio" name="Ac" value="No"  onChange={handlefilter}/>
                     <label>Non Ac</label>
                 </div>
             </div>
             <div className={styles.optiononewrap}>
                 <div>
-                    <input type="radio" name="Wifi" value="yes" onChange={handlefilter} />
+                    <input type="radio" name="Wifi" value="Yes" onChange={handlefilter} />
                     <label>Wifi</label>
                 </div>
                  <div>
@@ -38,11 +38,11 @@ export  default function FilteroptionDiv({openfilter,handlefilter,addafilterfunc
             </div>
             <div className={styles.optiononewrap}>
                 <div>
-                    <input type="radio" name="available" value="yes" onChange={handlefilter} />
+                    <input type="radio" name="availablerooms" value="Yes" onChange={handlefilter} />
                     <label>Room Availble</label>
                 </div>
                  <div>
-                    <input type="radio" name="available" value="no" onChange={handlefilter} />
+                    <input type="radio" name="availablerooms" value="No" onChange={handlefilter} />
                     <label>Non available</label>
                 </div>
             </div>
