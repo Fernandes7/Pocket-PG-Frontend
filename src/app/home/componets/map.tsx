@@ -62,7 +62,7 @@ export default function MapIntegration() {
         mapboxAccessToken="pk.eyJ1IjoiZmVybm8wMDciLCJhIjoiY2x0amo0ajQyMGgzejJpcXdvM2t3cTVwYSJ9.G88ckj-uEVwDGFQCsJWLVw"
         mapStyle="mapbox://styles/mapbox/streets-v11"
         initialViewState={{
-     latitude: 10.1632, longitude: 76.6413, zoom: 7
+     latitude: 10.1632, longitude: 76.6413, zoom: 9
     }}
       >
         <GeolocateControl

@@ -102,8 +102,6 @@ export default function AddHostelcomponets()
             {
             toast("Hostel data uploaded successfully")
             }
-            else
-            toast("Failed to upload image and data of Hostels")
         })
     }
     
@@ -168,7 +166,7 @@ export default function AddHostelcomponets()
                 <input type="text" placeholder="Price Without Washing" name="Washing" onChange={handletextdata} /><br />
              </div>}
             {loading && <h4>Loading</h4>} <br />
-            {!loading &&<button onClick={Senddatatobackend}>Upload data</button>}
+            {<button onClick={Senddatatobackend}>Upload data</button>}
             <ToastContainer />
         </div>
     )

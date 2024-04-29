@@ -7,7 +7,7 @@ export default function DisplaymapHostels({hostelname,hostelimage,hosteltype,hos
 {
     const router=useRouter()
     return(
-        <div className={styles.hostelcard} key={hostelname} onClick={()=>{hostelimage ? router.push(`/selectedhostel?hostelid=${_id}`):toast("We will let you now if it is available")}}>
+        <div className={styles.hostelcard} key={hostelname} onClick={()=>{availablerooms>0 ? router.push(`/selectedhostel?hostelid=${_id}`):toast("We will let you now if it is available")}}>
         {availablerooms==0 && <div className={styles.unable}><h2>Sorry, Currently this hostel is not available</h2></div>}
         <img src={hostelimage} alt="hostelimage" className={styles.hostelimage} />
         <div className={styles.hostelcardcontent}>

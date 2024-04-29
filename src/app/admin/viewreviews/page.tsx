@@ -5,6 +5,7 @@ import { CategoryScale } from "chart.js";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
 import styles from "./viewreviews.module.css"
+import { useSearchParams } from "next/navigation";
 
 Chart.register(CategoryScale);
 
@@ -13,6 +14,9 @@ export default  function ViewRevies()
   const [sentimetaldata,setSentimentaldata]=useState<any>()
   const [Graphdata,setGraphdata]=useState<any>()
   const [Reviewdata,setReviewdata]=useState<any>()
+  const searchparams=useSearchParams()
+
+  const hostelid=searchparams.get("hostelid")
 
   useEffect(()=>{
   fetchgraphdata()
@@ -23,11 +27,12 @@ export default  function ViewRevies()
   },[sentimetaldata])
 
   const fetchgraphdata=()=>{
-    axios.post("http://localhost:8000/vs").then((responce)=>{
+    axios.post("http://localhost:8000/vs",{data:hostelid}).then((responce)=>{
       if(responce.data.success)
-       setSentimentaldata(responce.data.data)
+      console.log(responce.data)
+       setSentimentaldata(responce.data.data[0])
     })
-    axios.post("http://localhost:8000/vhh").then((responce)=>{
+    axios.post("http://localhost:8000/vhh",{data:hostelid}).then((responce)=>{
       if(responce.data.success)
        setReviewdata(responce.data.data)
     })
@@ -35,13 +40,15 @@ export default  function ViewRevies()
   }
   const setDataofGraph=()=>{
   if(sentimetaldata)
+  console.log(sentimetaldata.previouspredictedrating)
+  if(sentimetaldata && sentimetaldata.truereview && sentimetaldata.previouspredictedrating)
   {
     setGraphdata({
-      labels: sentimetaldata.truereview.map((data) => data.review), 
+      labels:  sentimetaldata.truereview.map((data:any) => data.review), 
       datasets: [
         {
           label: "Users Gained ",
-          data: sentimetaldata.truereview.map((data) => data.score),
+          data: sentimetaldata.truereview.map((data:any) => data.score),
           backgroundColor: [
             "rgba(75,192,192,1)",
           ],
@@ -50,7 +57,7 @@ export default  function ViewRevies()
         },
         {
           label: "Predicted Data ",
-          data: sentimetaldata.previouspredictedrating.map((data) => data),
+          data: sentimetaldata.previouspredictedrating.map((data:any) => data),
           backgroundColor: [
             "white",
           ],
@@ -66,7 +73,7 @@ export default  function ViewRevies()
     <div className={styles.reviewwrap}>
     <div className={styles.reviewdiv}>
       <h1>Reviews</h1>
-      {Reviewdata && Reviewdata.map((item)=>{
+      {Reviewdata ? Reviewdata.map((item)=>{
         return (
            <div className={ `${styles.reviewwrapdiv} ${styles[`score${item.hostelreview[0].score}`]}`}>
         <div className={styles.user}>
@@ -76,10 +83,10 @@ export default  function ViewRevies()
           <p className={styles.reviewp}>{item.hostelreview[0].review} </p>
       </div>
         )
-      })}
+      }):<p>No Reviews added Yet</p>}
 
     </div>
-    {Graphdata && <div className={styles.graphdiv}>
+    {Graphdata ? <div className={styles.graphdiv}>
        <h2 style={{ textAlign: "center" }}>Review Chart Analysis</h2>
        <Line
         data={Graphdata}
@@ -106,7 +113,7 @@ export default  function ViewRevies()
           <p>Predicted Rating Representing line</p>
         </div>
       </div>
-    </div>}
+    </div>:<p>Add Some reviews to view Chart</p>}
     </div>
     </div>
   )

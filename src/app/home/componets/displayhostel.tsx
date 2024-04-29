@@ -110,6 +110,7 @@ export default function DisplayHostels()
 
     const clearall=()=>{
     setSortenable(false)
+    setsorteddata("")
     }
     return(
         <div className={styles.displayhosteldivwrap}>
