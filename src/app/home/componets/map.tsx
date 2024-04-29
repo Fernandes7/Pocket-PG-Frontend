@@ -34,6 +34,8 @@ export default function MapIntegration() {
   else
   {
     const hostelname=searchparams.get("hostelname")
+    if(hostelname)
+    {
     axios.post("http://localhost:8000/sh",{data:{name:hostelname}}).then((responce)=>{
       if(responce.data.success)
       {
@@ -41,6 +43,7 @@ export default function MapIntegration() {
       console.log(hosteldata)
       }
   })
+}
   }
   }
   const handlepopup=(lat:number,services:string,rating:string)=>{

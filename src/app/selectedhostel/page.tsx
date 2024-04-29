@@ -15,6 +15,7 @@ import axios from "axios"
 import ComformBooking from "./comonents/comformBooking"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LoadingScreen from "./comonents/loading"
 
 
 export default function SelectedHostel()
@@ -137,7 +138,7 @@ export default function SelectedHostel()
                 {openCustomize && <Customizeprice addcustomize={handlecustomize} data={data} hostelrenthandle={hostelrenthandle} handleservices={handleservices} servicesadded={servicescustomized}/>}
                 {openConformbooking &&<ComformBooking hostelimage={data.hostelimage} hosteladdress={data.hosteladdress} hostelname={data.hostelname} hostelrent={hostelrent} hostelservices={servicescustomized} handle={handleconformbooking}  showtost={showtost} hostelid={data._id} handleconformbooking={handleconformbooking}/>}
             </div>
-:<h1>loading....</h1>}
+:<LoadingScreen />}
         </div>
     )
 }

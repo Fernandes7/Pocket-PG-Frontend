@@ -81,10 +81,13 @@ export default function DisplayHostels()
         {
             const hostelname=searchparams.get("hostelname")
             setHosteldata([])
+            if(hostelname)
+            {
             axios.post("http://localhost:8000/sh",{data:{name:hostelname}}).then((responce)=>{
             if(responce.data.success)
             setHosteldata(responce.data.data)
         })
+    }
         }
     }
 
