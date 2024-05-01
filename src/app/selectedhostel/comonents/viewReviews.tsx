@@ -34,14 +34,14 @@ export default function ViewReviews({handlereviews})
           <h2>Review Details Added</h2>
           <h4>This are the reviews added by the differnt registerd users</h4>
           <div className={styles.wrapofreview}>
-            {review ? review.map(({hostelreview,key}:any)=>{
+            {(review && review.length>0) ? review.map(({hostelreview,key}:any)=>{
                 return(
                 <div key={key}>
                 <img src={imogi[hostelreview[0].score]} alt="" />
                 <p>{hostelreview[0].review}</p>
             </div>
                 )
-            }):<h3 style={{fontFamily:"Satisfy"}}>Loading reviews...</h3>}
+            }):<h3 style={{fontFamily:"Raleway",fontWeight:400,color:"red"}}>No reviews Added Yet...</h3>}
             
           </div>
         </div>

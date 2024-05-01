@@ -48,7 +48,7 @@ export default function AdminStartpage()
                 {data &&<h3 className={styles.admininnerh3}>{data.uc}</h3>}
              </div>
              <div className={styles.fourthadmincard}>
-             <div className={styles.admininner}>
+             <div className={styles.admininner} onClick={()=>router.push("/admin/viewbooking")}>
                     <img src="https://cdn-icons-png.flaticon.com/128/2702/2702134.png" alt="" />
                 <h2>Booking Data</h2> 
                 </div>

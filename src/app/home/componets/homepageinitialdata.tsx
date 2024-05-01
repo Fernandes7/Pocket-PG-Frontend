@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import styles from "../home.module.css"
 import axios from "axios"
+import { useRouter } from "next/navigation"
 export default function HomepageInitialdata()
 {
     useEffect(()=>{
     fetchlocationdetails()
     },[])
+    const router=useRouter()
     const [locationdata,setLocationdata]=useState<any>()
     const fetchlocationdetails=()=>{
         axios.get("http://localhost:8000/viewlocation").then((responce)=>{
@@ -19,7 +21,7 @@ export default function HomepageInitialdata()
             <div className={styles.locationwrap}>
                 {locationdata && locationdata.map(({locationname,imageurl,hostelcount}:any)=>{
                     return(
-                        <div className={styles.locationcard}>
+                        <div className={styles.locationcard} onClick={()=>router.push(`/home?initial=false&locationname=${locationname}`)}>
                         <img src={imageurl} alt="locationimge" />
                         <div className={styles.locationtext}>
                              <div>

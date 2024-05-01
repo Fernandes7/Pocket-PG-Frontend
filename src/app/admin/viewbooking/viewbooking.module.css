@@ -1,0 +1,71 @@
+.bookingmainwarp{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    min-height: 100vh;
+    background: rgb(206, 211, 211);
+    padding-top: 50px;
+}
+
+.bookingmainwarp h2{
+    font-family: "Raleway";
+    font-weight: 500;
+}
+
+.bookingswrap{
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    gap:20px 20px;
+    flex-wrap: wrap;
+}
+
+.bookcard{
+    width: 22%;
+    height: 550px;
+    border-radius: 10px;
+   background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    -webkit-box-shadow: 10px 10px 9px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 9px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 9px -8px rgba(0,0,0,0.75);
+}
+
+.bookcardimg{
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.bookcard h3{
+    font-family: "Satisfy";
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.bookingaddressdiv{
+    width: 100%;
+    display: flex;
+    gap:10px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.bookingaddressdiv img{
+    width: 20px;
+    height: 20px;
+}
+
+.bookingaddressdiv p{
+    font-family: "Raleway";
+    font-size: 12px;
+}
